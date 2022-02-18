@@ -1,0 +1,125 @@
+site_name: 服务器使用指南
+theme:
+  name: material
+  language: zh
+  features:
+    - content.code.annotate
+    # - content.tabs.link
+    # - header.autohide
+    # - navigation.expand
+    - navigation.indexes
+    # - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  icon:
+    logo: logo
+
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+
+extra:
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/squidfunk
+    - icon: fontawesome/brands/gitter
+      link: https://gitter.im/squidfunk/mkdocs-material
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/mkdocs-material/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/squidfunk
+
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - 首页: index.md
+  - 连接:
+    - Windows: 01-connect/win.md
+    - macOS: 01-connect/mac.md
+    - Android: 01-connect/android.md
+    - iOS: 01-connect/ios.md
+  - Conda: 
+    - 安装: 02-conda/install.md
+    - 使用: 02-conda/use.md
+  - Jupyter Lab:
+    - 安装: 03-jupyter/install.md
+    - 使用: 03-jupyter/use.md
+  - Python:
+    - 安装: 06-python/install.md
+    - 环境管理: 06-python/env.md
+  - Stata:
+    - Jupyter Lab: 04-stata/jupyter.md
+    - 图形界面: 04-stata/gui.md
+    - 命令行使用: 04-stata/command-line.md
+  - SAS: 
+    - Jupyter Lab: 05-sas/jupyter.md
+    - 图形界面: 05-sas/gui.md
+    - 命令行使用: 05-sas/command-line.md
+  - R:
+    - RStudio: 07-r/rstudio.md
+  - Linux:
+    - Screen: 08-linux/screen.md
+    - 图形界面: 08-linux/gui.md
