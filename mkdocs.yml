@@ -1,6 +1,20 @@
 site_name: 服务器使用指南
+site_url: https://guide.wenzhi-ding.com/
+site_author: 丁文治
+site_description: >-
+  本网站为香港大学金融创新与发展研究中心的服务器用户提供使用指南。
+
+# repo_name: Wenzhi-Ding/Server_User_Guide
+# repo_url: https://github.com/Wenzhi-Ding/Server_User_Guide
+
+copyright: Copright &copy 2022 - 2022 丁文治
+
 theme:
   name: material
+
+  include_search_page: false
+  search_index_only: true
+
   language: zh
   features:
     - content.code.annotate
@@ -40,18 +54,7 @@ plugins:
 extra:
   analytics:
     provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/squidfunk
-    - icon: fontawesome/brands/gitter
-      link: https://gitter.im/squidfunk/mkdocs-material
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/mkdocs-material/
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/squidfunk
+    property: G-V07KXKQTMQ
 
 
 markdown_extensions:
@@ -107,6 +110,14 @@ nav:
   - Jupyter Lab:
     - 安装: 03-jupyter/install.md
     - 使用: 03-jupyter/use.md
+  - Linux:
+    - 基本命令: 08-linux/basic.md
+    - 稳定运行程序: 08-linux/screen.md
+    - 图形界面: 08-linux/gui.md
+    - 服务器间同步文件: 08-linux/rsync.md
+  - 数据及权限: data.md
+  - 推荐实践: 
+    - 项目文件管理: 11-practice/file-index.md
   - Python:
     - 安装: 06-python/install.md
     - 环境管理: 06-python/env.md
@@ -118,8 +129,9 @@ nav:
     - Jupyter Lab: 05-sas/jupyter.md
     - 图形界面: 05-sas/gui.md
     - 命令行使用: 05-sas/command-line.md
-  - R:
-    - RStudio: 07-r/rstudio.md
-  - Linux:
-    - Screen: 08-linux/screen.md
-    - 图形界面: 08-linux/gui.md
+  # - R:
+  #   - RStudio: 07-r/rstudio.md
+  # - MATLAB:
+  #   - 官方方案: 09-matlab/official.md
+  # - SQL:
+  #   - PostgreSQL: 10-sql/postgre.md

@@ -4,7 +4,7 @@
 
 ### Xmanager
 
-安装与Xshell配套的[Xmanager](https://www.netsarang.com)后，在Xshell中使用相关命令，即可自动调出图形界面
+安装与Xshell配套的[Xmanager](https://www.netsarang.com)后，在Xshell中使用相关命令，即可自动调出图形界面。
 
 ### Xming
 
@@ -31,7 +31,7 @@ ssh -X <username>@<host>
 	**解决方案**
 	
 	彻底退出所有PuTTY和Xming，并重新启动。
-	
+
 ## macOS
 
 macOS中，需要[XQuartz](https://en.wikipedia.org/wiki/XQuartz)搭配Terminal使用。

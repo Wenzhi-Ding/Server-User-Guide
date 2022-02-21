@@ -7,7 +7,7 @@ macOS中可以使用Terminal完成SSH连接，使用[FileZilla](https://filezill
 在Terminal中输入如下命令后输入密码即可登入：
 
 ```bash
-ssh <username>@chenlin03.fbe.hku.hk
+ssh <username>@<host>
 ```
 
 ??? question "输入密码时光标不动"
@@ -19,14 +19,14 @@ ssh <username>@chenlin03.fbe.hku.hk
     **原因**
     
     需要重置一下本地SSH记录的`known_hosts`
-
+    
     **解决方案**
-
-    1. 先获取目标服务器的IP地址，如147.8.117.185。（可通过`ifconfig`命令找到）
-    2. 执行命令`ssh-keygen -R 147.8.117.185`。
-
+    
+    1. 先获取目标服务器的IP地址，如123.123.123.123。（可通过`ifconfig`命令找到）
+    2. 执行命令`ssh-keygen -R 123.123.123.123`。
+    
     参考：
-
+    
     - https://blog.csdn.net/wd2014610/article/details/85639741
 
 ## SFTP
@@ -42,5 +42,5 @@ ssh <username>@chenlin03.fbe.hku.hk
 如需要使用Jupyter Lab，请在Terminal登陆时使用如下命令
 
 ```bash
-ssh -L 22222:127.0.0.1:22222 <username>@chenlin03.fbe.hku.hk
+ssh -L 22222:127.0.0.1:22222 <username>@<host>
 ```

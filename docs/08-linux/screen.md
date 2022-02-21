@@ -22,7 +22,7 @@ screen -ls
 
 <figure><img src="/assets/screen-ls.png"></figure>
 
-如图，我的账号下已有两个桌面：wrds（进程号为60136）和dnb（进程号为7292）
+如图，我的账号下已有两个桌面：jekyll（进程号为2197748）和nb（进程号为3035702）
 
 2、进入桌面。
 
@@ -57,7 +57,7 @@ screen -r nb
 ??? question "执行`screen -r nb`失败，未能正常切换到名为`nb`的桌面。"
 
     <figure><img src="/assets/screen-attach.png"></figure>
-
+    
     **原因**
     
     这往往是因为此前未通过Ctrl + A +D的方式正常退出`nb`桌面，使得该桌面仍为“挂载”状态（Attached）。程序认为该桌面仍被占用，因此我们不能进入。
@@ -65,5 +65,5 @@ screen -r nb
     **解决方法**
     
     先使用Ctrl + A +D确保回到最外层的SSH界面，然后执行`screen -d nb`来解除`nb`桌面的占用状态。之后就可以通过`screen -r nb`正常进入了。
-
+    
     <figure><img src="/assets/screen-detach.png"></figure>

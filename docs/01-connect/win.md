@@ -16,7 +16,7 @@
 
 <figure><img src="/assets/xshell-passwd.png"></figure>
 
-4、点击“确定”将配置保存至会话管理器。在会话管理器中双击该配置即可登入服务器。出现`<username>@chenlin03`字样表示已成功登入。
+4、点击“确定”将配置保存至会话管理器。在会话管理器中双击该配置即可登入服务器。出现`<username>@<host>`字样表示已成功登入。
 
 <figure><img src="/assets/xshell-login-success.png"></figure>
 
@@ -28,7 +28,7 @@
 
 2、随后可以在此处查看保存的配置并登入。
 
-<figure><img src="/assets/image-20220122171509048.png"></figure>
+<figure><img src="/assets/xftp-all-config.png"></figure>
 
 3、右键文件即可在本地和服务器之间传输文件。
 
