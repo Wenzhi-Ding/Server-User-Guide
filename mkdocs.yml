@@ -129,6 +129,7 @@ nav:
     - Jupyter Lab: 05-sas/jupyter.md
     - 图形界面: 05-sas/gui.md
     - 命令行使用: 05-sas/command-line.md
+  - 团队协作: team.md
   # - R:
   #   - RStudio: 07-r/rstudio.md
   # - MATLAB:
