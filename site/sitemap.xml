@@ -2,137 +2,142 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://guide.wenzhi-ding.com/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/data/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/team/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/01-connect/android/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/01-connect/ios/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/01-connect/mac/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/01-connect/win/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/02-conda/install/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/02-conda/use/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/03-jupyter/install/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/03-jupyter/use/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/04-stata/command-line/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/04-stata/gui/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/04-stata/jupyter/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/05-sas/command-line/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/05-sas/gui/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/05-sas/jupyter/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/06-python/env/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/06-python/install/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/07-r/rstudio/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/08-linux/basic/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/08-linux/gui/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/08-linux/rsync/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/08-linux/screen/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://guide.wenzhi-ding.com/08-linux/smem/</loc>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/09-matlab/official/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/10-sql/postgre/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://guide.wenzhi-ding.com/11-practice/file-index/</loc>
-         <lastmod>2022-02-25</lastmod>
+         <lastmod>2022-02-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

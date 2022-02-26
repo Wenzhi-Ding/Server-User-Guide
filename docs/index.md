@@ -27,12 +27,9 @@
 	* 基本操作
 	* 使用Python以外的语言
 
-
 ### 其他
 
-- Linux常用指令
-- [Screen](/08-linux/screen/)
-- [图形界面](/08-linux/gui/)
-- Stata
-- SAS
-- R
+- [Linux稳定运行程序](/08-linux/screen/)
+- [避免过度占用资源](/08-linux/smem/)
+- [Stata](/04-stata/jupyter/)
+- [SAS](/05-sas/gui/)

@@ -115,9 +115,7 @@ nav:
     - 稳定运行程序: 08-linux/screen.md
     - 图形界面: 08-linux/gui.md
     - 服务器间同步文件: 08-linux/rsync.md
-  - 数据及权限: data.md
-  - 推荐实践: 
-    - 项目文件管理: 11-practice/file-index.md
+    - 检查内存缓存占用: 08-linux/smem.md
   - Python:
     - 安装: 06-python/install.md
     - 环境管理: 06-python/env.md
@@ -129,6 +127,9 @@ nav:
     - Jupyter Lab: 05-sas/jupyter.md
     - 图形界面: 05-sas/gui.md
     - 命令行使用: 05-sas/command-line.md
+  - 数据及权限: data.md
+  - 推荐实践: 
+    - 项目文件管理: 11-practice/file-index.md
   - 团队协作: team.md
   # - R:
   #   - RStudio: 07-r/rstudio.md
