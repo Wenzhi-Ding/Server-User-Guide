@@ -78,7 +78,7 @@ jupyter lab --generate-config
 	from jupyter_server.auth import passwd; passwd()
 	```
 	
-	复制`sha1:`开头的字符串。
+	复制`sha1:`或`argon2:`开头的字符串。
 	
 	<figure><img src="/assets/jupyter-gen-passwd.png"></figure>
 	
@@ -92,7 +92,7 @@ jupyter lab --generate-config
 	c.ServerApp.password
 	```
 	
-	并设为`sha1:`开头的字符串。
+	并设为`sha1:`或`argon2:`开头的字符串。
 	
 	<figure><img src="/assets/jupyter-set-passwd.png"></figure>
 	
