@@ -50,6 +50,15 @@ jupyter lab
 	- 简单方案：重启电脑后首先连接服务器并打开Jupyter Lab
 	- 精准方案：通过`netstat -aof | findstr:22222`找出占用了22222端口的应用程序。关闭该应用程序后即可正常访问Jupyter Lab。
 
+??? question "Jupyter Lab密码不正确"
+
+	**原因**
+	
+	可能是忘记密码了。
+	
+	**解决方案**
+	
+	重复[安装](/03-jupyter/install)的第5步。重新设定密码后，重启Jupyter Lab即可。
 
 ## 新建
 

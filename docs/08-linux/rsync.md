@@ -7,7 +7,7 @@
 
 ??? question "`rsync`与其他传输方式比的好处？"
 
-	`rsync -a`命令可以自动比较文件的修改日期，跳过那些没有修改的文件，避免了每次都全量更新对时间和带宽的浪费。
+	`rsync -avz`命令可以自动比较文件的修改日期，跳过那些没有修改的文件，避免了每次都全量更新对时间和带宽的浪费。此外还会自动将文件“压缩——传输——解压缩”，大幅提高同步的速度。
 
 以从WRDS上下载SDC New Issues数据为例。具体过程如下：
 
@@ -26,7 +26,7 @@
 3、通过以下命令同步
 
 ```bash
-rsync -a <username>@<remote_host>:/wrdslin/tfn/sasdata/sdc_ni /data/dataset/sdc
+rsync -avz <username>@<remote_host>:/wrdslin/tfn/sasdata/sdc_ni/* /data/dataset/sdc
 ```
 
 一般来说，执行该命令后会提示输入密码。正常输入`<remote_host>`的登录密码即可。
@@ -34,6 +34,6 @@ rsync -a <username>@<remote_host>:/wrdslin/tfn/sasdata/sdc_ni /data/dataset/sdc
 ??? question "输入密码时光标不动"
 
 	在macOS和Linux系统中，输入密码时不会提示你已输入多少位。若看到光标不动请不要理会，只需要正常输入完密码并按回车即可。
-	
-4、可以通过SFTP查看下载进程。
+
+4、可以通过SSH界面或SFTP查看下载进程。
 
