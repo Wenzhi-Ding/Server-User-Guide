@@ -30,6 +30,24 @@ jupyter lab --generate-config
 
 <figure><img src="/assets/jupyter-config-path.png"></figure>
 
+??? question "找不到配置文件"
+
+	**原因1**
+	
+	没有看文件路径。
+	
+	**解决方案**
+	
+	请看客户端中提示的路径。
+	
+	**原因2**
+	
+	Xftp没有显示隐藏文件。
+	
+	**解决方案**
+	
+	参考[该页面](/01-connect/win/#sftp)关于Xftp的设置。
+
 4、使用SFTP客户端将配置文件下载到自己的计算机进行编辑
 
 <figure><img src="/assets/jupyter-config.png"></figure>

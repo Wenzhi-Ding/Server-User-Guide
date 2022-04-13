@@ -30,9 +30,17 @@
 
 <figure><img src="/assets/xftp-all-config.png"></figure>
 
-3、右键文件即可在本地和服务器之间传输文件。
+3、设置展示隐藏文件。
+
+<figure><img src="/assets/xftp-show-all-file-1.png"></figure>
+
+<figure><img src="/assets/xftp-show-all-file-2.png"></figure>
+
+4、右键文件即可在本地和服务器之间传输文件。
 
 <figure><img src="/assets/xftp-transfer.png"></figure>
+
+
 
 ## 端口侦听
 
