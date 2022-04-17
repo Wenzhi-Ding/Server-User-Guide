@@ -119,6 +119,7 @@ nav:
   - Python:
     - 安装: 06-python/install.md
     - 环境管理: 06-python/env.md
+    - 使用多进程: 06-python/parallel.md
   - Stata:
     - Jupyter Lab: 04-stata/jupyter.md
     - 图形界面: 04-stata/gui.md
