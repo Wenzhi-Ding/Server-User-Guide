@@ -112,6 +112,20 @@ mv <source> <destination>
 rm -rf <directory>
 ```
 
+### 检查硬盘空间占用
+
+=== "检查硬盘挂载"
+
+    ```bash
+    df -ah
+    ```
+
+=== "检查文件夹占用"
+
+    ```bash
+    du -sh <folder>
+    ```
+
 ## 管理应用程序
 
 ### 列出进程
