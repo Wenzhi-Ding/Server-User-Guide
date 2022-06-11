@@ -120,13 +120,14 @@ jupyter lab --generate-config
 	exit()
 	```
 
+6、通过SFTP将修改好的配置文件传输回服务器上的原位置，替换原本的配置文件。
+
+7、iPython设置
+
 === "展示多个输出"
 
-	在命令行输入`ipython profile create`，得到ipython配置文件的位置。通常该位置是`~/.ipython/profile_default/ipython_config.py`
-	
-	打开该`ipython_config.py`文件，找到`ast_node_interactivity`，取消其注释状态，并将默认的`"last_expr"`设置为`"all"`。
-	
-	此处的目的是使得你的Jupyter Lab能够在一个单元格中输出多个结果。
+    在命令行输入`ipython profile create`，得到ipython配置文件的位置。通常该位置是`~/.ipython/profile_default/ipython_config.py`
 
+    打开该`ipython_config.py`文件，找到`ast_node_interactivity`，取消其注释状态，并将默认的`"last_expr"`设置为`"all"`。
 
-6、通过SFTP将修改好的配置文件传输回服务器上的原位置，替换原本的配置文件。
+    此处的目的是使得你的Jupyter Lab能够在一个单元格中输出多个结果。

@@ -39,6 +39,12 @@ jupyter lab
 
 	当网络发生波动或SSH终端意外被关闭（比如电脑关机、待机），Jupyter Lab也会终止运行。当您的Jupyter Lab配置完成、可以正常访问后，**请务必参考[Screen命令教程](/08-linux/screen/)将Jupyter Lab挂载于独立的窗口下。**
 
+!!! 自动完成括号配对
+
+	在Settings菜单中，推荐勾选Auto Close Brackets。这样当你输入引号、括号的左半部分时，系统会自动输入右半部分，并把你的光标置于括号中间。编辑体验比较好。
+	
+	<figure><img src="/assets/jupyter-auto-close-brackets.png"></figure>
+
 ??? question "Jupyter Lab链接中的端口号正确，但本地电脑浏览器中显示无法访问"
 
 	**原因**
