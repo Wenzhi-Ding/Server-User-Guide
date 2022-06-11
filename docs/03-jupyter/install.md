@@ -122,12 +122,27 @@ jupyter lab --generate-config
 
 6、通过SFTP将修改好的配置文件传输回服务器上的原位置，替换原本的配置文件。
 
-7、iPython设置
+7、（可选）iPython设置。在命令行输入`ipython profile create`，得到ipython配置文件的位置。通常该位置是`~/.ipython/profile_default/ipython_config.py`。打开该文件，找到以下配置项，推荐按如下设置。
 
 === "展示多个输出"
-
-    在命令行输入`ipython profile create`，得到ipython配置文件的位置。通常该位置是`~/.ipython/profile_default/ipython_config.py`
-
-    打开该`ipython_config.py`文件，找到`ast_node_interactivity`，取消其注释状态，并将默认的`"last_expr"`设置为`"all"`。
-
+    
+    ```python
+    c.InteractiveShell.ast_node_interactivity = 'all'
+    ```
+    
     此处的目的是使得你的Jupyter Lab能够在一个单元格中输出多个结果。
+    
+=== "启动默认执行"
+
+    ```python
+    c.InteractiveShellApp.exec_lines = [
+            "import pandas as pd",
+            "import numpy as np",
+            "pd.set_option('display.max_columns', 500)",
+            "pd.set_option('display.max_rows', 100)"
+            ]
+    ```
+    
+    此处使得每次打开一个新的笔记本，都会自动导入pandas和numpy，以及调整pandas表格的可显示范围。
+    
+    你可以在此处加入其他懒得每次都写的代码。
