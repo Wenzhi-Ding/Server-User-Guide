@@ -109,13 +109,16 @@ nav:
     - 使用: 02-conda/use.md
   - Jupyter Lab:
     - 安装: 03-jupyter/install.md
-    - 使用: 03-jupyter/use.md
+    - 网页版: 03-jupyter/web.md
+    - VSCode版: 03-jupyter/vscode.md
+    - 操作简介: 03-jupyter/use.md
   - Linux:
     - 基本命令: 08-linux/basic.md
     - 稳定运行程序: 08-linux/screen.md
     - 图形界面: 08-linux/gui.md
     - 服务器间同步文件: 08-linux/rsync.md
     - 检查内存缓存占用: 08-linux/smem.md
+    - 免密码登录: 08-linux/pubkey.md
   - Python:
     - 安装: 06-python/install.md
     - 环境管理: 06-python/env.md

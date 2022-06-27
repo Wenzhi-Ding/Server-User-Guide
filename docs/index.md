@@ -24,12 +24,11 @@
 
 - [Conda](/02-conda/install/)
 - [Jupyter Lab](/03-jupyter/install)
-	* 基本操作
-	* 使用Python以外的语言
 
 ### 其他
 
 - [Linux稳定运行程序](/08-linux/screen/)
 - [避免过度占用资源](/08-linux/smem/)
-- [Stata](/04-stata/jupyter/)
-- [SAS](/05-sas/gui/)
+- [免密码登录服务器](/08-linux/pubkey/)
+- [Jupyter中使用Stata](/04-stata/jupyter/)
+- [Jupyter中使用SAS](/05-sas/jupyter/)
