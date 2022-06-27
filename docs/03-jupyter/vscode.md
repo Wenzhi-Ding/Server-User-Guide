@@ -19,6 +19,8 @@ Host [host]
 
 3、VSCode中登录服务器后，在VSCode的资源管理器中添加项目文件夹，双击其中的`ipynb`文件即可打开Jupyter Lab。
 
+4、VSCode中Jupyter Lab的使用方法可以参考[官方教程](https://code.visualstudio.com/docs/datascience/jupyter-notebooks)
+
 ??? question "如何在SSH连接中断后恢复内核并继续工作"
 	
 	首先需要确保已按照[该方式](08-linux/screen)运行Jupyter Lab。
