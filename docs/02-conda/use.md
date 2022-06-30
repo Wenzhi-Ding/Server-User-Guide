@@ -7,7 +7,7 @@
 1、新建环境
 
 ```bash
-conda create env -n torch python=3.9
+conda create -n torch python=3.9
 ```
 
 比如此处，就新建了一个名为`torch`的环境，并且指定了Python版本为3.9。
