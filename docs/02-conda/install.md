@@ -63,7 +63,7 @@ conda --version
 
 <figure><img src="/assets/conda-version.png"/></figure>
 
-9、推荐执行以下步骤将[conda-forge](https://conda-forge.org/)设为主要的更新渠道。
+9、（可选）执行以下步骤将[conda-forge](https://conda-forge.org/)设为主要的更新渠道。好处是通常conda-forge的包比conda的包更新的及时很多，但缺点是稳定性和可靠性不如conda的包。请自行决定是否设置conda-forge优先。
 
 ```bash
 conda config --add channels conda-forge
