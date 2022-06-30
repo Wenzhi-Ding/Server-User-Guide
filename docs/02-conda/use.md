@@ -18,6 +18,10 @@ conda create env -n torch python=3.9
 conda activate torch
 ```
 
+??? question "懒得每次都激活环境"
+
+	可以在`~/.bashrc`文件的最后一行加上`conda activate [name]`，在每次连接时自动激活某环境。
+
 3、直接调用该环境
 
 例如我不想要进入该环境，只是需要直接调用该环境来运行某程序，可以首先获取该环境的Python的路径：
