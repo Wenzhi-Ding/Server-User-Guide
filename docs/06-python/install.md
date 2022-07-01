@@ -1,0 +1,1 @@
+建议使用Conda[安装](/02-conda/install/)。
