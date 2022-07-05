@@ -34,15 +34,15 @@ Host [host]
 	在右上角的内核选择中，选择此前该笔记本的内核即可。
 	
 	<figure><img src="/assets/jupyter-vscode-restore-kernel.png"></figure>
-	
+
 ??? question "如何避免每次打开Jupyter Lab要输入密码？"
 
-	可以将Jupyter Lab设置为“固定Token”登录。在服务器端，打开`~/.jupyter/jupyter_lab_config.py`，找到`c.ServerApp.token`，并将其值设为一个指定的字符串，比如`foobar`。
+	可以将Jupyter Lab设置为[固定Token登录](/03-jupyter/install/#__tabbed_1_4)。
 	
-	此后重新启动Jupyter Lab，你会发现系统提示的URI已经变为了`http://localhost:22222/lab?token=foobar`。你只需要将这个URI输入给VSCode右下角的“Jupyter服务器”即可免于每次登录输入Jupyter Lab的密码。
+	启动Jupyter Lab，复制包含Token的URI`http://localhost:22222/lab?token=foobar`，并输入给VSCode右下角的“Jupyter服务器”，即可免于每次登录输入Jupyter Lab的密码。
 	
 	同时设置[公钥登录SSH](/08-linux/pubkey)和Token登录Jupyter Lab将使得你不需要输入任何密码即可开始工作。
-	
+
 !!! VSCode版的内核管理
 
 	目前，VSCode版尚不支持像网页版一样关闭内核。因此，建议你定期有意识的去清理内核，否则可能会有过多的内核堆在后台。

@@ -52,9 +52,9 @@ jupyter lab --generate-config
 
 <figure><img src="/assets/jupyter-config.png"></figure>
 
-5、搜索以下配置项，取消注释，并改为指定的值。**注意三项设定都必须完成。**
+5、搜索以下配置项，取消注释，并改为指定的值。**注意前三项设定都必须完成**，最后一项可选。
 
-=== "不打开浏览器"
+!!! note "不打开浏览器"
 	
 	启动Jupyter Lab后不打开浏览器（否则会在服务器端打开浏览器）。
 	
@@ -68,7 +68,7 @@ jupyter lab --generate-config
 	
 	<figure><img src="/assets/jupyter-browser.png"></figure>
 
-=== "固定端口"
+!!! note "固定端口"
 
 	在指定的端口启动Jupyter Lab。端口号请向管理员申请，可以在20000-49999之间选择任意数字。此处以22222端口为例。
 	
@@ -81,8 +81,16 @@ jupyter lab --generate-config
 	并设为分配的端口号。
 	
 	<figure><img src="/assets/jupyter-port.png"></figure>
+	
+	??? question "向谁申请端口号？"
+		
+		仅某些服务器的用户需要向管理员申请端口号。如果服务器用户不多，自行决定一个端口号即可。
+		
+		因为每个端口只能用于一个进程，这意味着如果你与其他人使用同一个端口的话，他将有可能看到并操作你的Jupyter Lab。因此仍然建议选择端口号后向该服务器的管理员报备，避免端口冲突。
+		
+		如果发现该端口经常不可用，可能是因为跟其他用户的端口冲突了，可以考虑更换一个端口。
 
-=== "设定密码"
+!!! note "设定密码"
 
 	在服务器中启动Python。
 	
@@ -119,12 +127,23 @@ jupyter lab --generate-config
 	```python
 	exit()
 	```
+	
+!!! note "设定Token"
+	
+	此设定为可选项，并非必需。主要是用于VSCode免密码验证使用Jupyter Lab。
+	
+	在配置文件中搜索`c.ServerApp.token`，取消注释，并将其值设为一个指定的字符串，比如`foobar`。
+	
+	此后重新启动Jupyter Lab，你会发现系统提示的URI已经变为了`http://localhost:22222/lab?token=foobar`。使用这个含Token的URI可以免密码登录Jupyter Lab。
+	
+	但必须强调的是，这一方式的安全性相较密码登录是有所下降的。
+	
 
 6、通过SFTP将修改好的配置文件传输回服务器上的原位置，替换原本的配置文件。
 
 7、（可选）iPython设置。在命令行输入`ipython profile create`，得到ipython配置文件的位置。通常该位置是`~/.ipython/profile_default/ipython_config.py`。打开该文件，找到以下配置项，推荐按如下设置。
 
-=== "展示多个输出"
+!!! note "展示多个输出"
     
     ```python
     c.InteractiveShell.ast_node_interactivity = 'all'
@@ -132,7 +151,7 @@ jupyter lab --generate-config
     
     此处的目的是使得你的Jupyter Lab能够在一个单元格中输出多个结果。
 
-=== "启动默认执行"
+!!! note "启动默认执行"
 
     ```python
     c.InteractiveShellApp.exec_lines = [
