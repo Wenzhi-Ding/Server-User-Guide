@@ -28,6 +28,14 @@ saspy
 which sas
 ```
 
+??? question "`which sas`没有任何返回值"
+	
+	这可能说明该服务器没有安装SAS，或管理员未将SAS执行文件的路径加入PATH中。
+	
+	通常SAS在Linux系统中的位置为`/usr/local/SASHome/SASFoundation/9.4/sas`。你可以自行检查该文件是否存在。如果存在的话，可以直接将该路径输入给`sascfg.py`文件。
+	
+	如果该文件存在，且`which sas`没有给出返回值，请提示管理员将SAS的执行文件软连接到`/usr/bin`中。
+
 ## 在Python中使用
 
 SAS官方提供的`saspy`参考代码：[saspy-examples](https://github.com/sassoftware/saspy-examples/)
