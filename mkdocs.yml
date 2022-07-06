@@ -62,6 +62,7 @@ plugins:
   - search
   - minify:
       minify_html: true
+  - mkdocs-jupyter
 
 
 extra:
@@ -140,6 +141,8 @@ nav:
     - Jupyter Lab: 04-stata/jupyter.md
     - 图形界面: 04-stata/gui.md
     - 命令行使用: 04-stata/command-line.md
+    - PyStata Example: 04-stata/pystata.ipynb
+    - Stata Kernel Example: 04-stata/stata_kernel.ipynb
   - SAS: 
     - Jupyter Lab: 05-sas/jupyter.md
     - 图形界面: 05-sas/gui.md

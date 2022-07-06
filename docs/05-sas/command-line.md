@@ -8,16 +8,11 @@ sas export.sas
 
 ??? question "提示`command not found`"
 	
-	这可能说明该服务器没有安装SAS，或管理员未将SAS执行文件的路径加入PATH中。
+	**原因**
 	
-	通常SAS在Linux系统中的位置为`/usr/local/SASHome/SASFoundation/9.4/sas`。你可以自行检查该文件是否存在。如果存在的话，可以直接运行。
+	1. SAS的应用程序尚未加入`PATH`环境变量中。
+	2. SAS在本服务器并未安装。
 	
-	```bash
-	/usr/local/SASHome/SASFoundation/9.4/sas export.sas
-	```
+	**解决方案**
 	
-	另外，如果该文件存在，但`sas`命令仍提示`command not found`，请提示管理员将SAS的执行文件软连接到`/usr/bin`中。在管理员设置后，应当可以直接使用：
-	
-	```bash
-	sas export.sas
-	```
+	请联系管理员安装SAS并将执行文件软链接到`/usr/bin`。

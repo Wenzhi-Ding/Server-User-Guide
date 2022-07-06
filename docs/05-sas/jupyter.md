@@ -30,11 +30,14 @@ which sas
 
 ??? question "`which sas`没有任何返回值"
 	
-	这可能说明该服务器没有安装SAS，或管理员未将SAS执行文件的路径加入PATH中。
+	**原因**
 	
-	通常SAS在Linux系统中的位置为`/usr/local/SASHome/SASFoundation/9.4/sas`。你可以自行检查该文件是否存在。如果存在的话，可以直接将该路径输入给`sascfg.py`文件。
+	1. SAS的应用程序尚未加入`PATH`环境变量中。
+	2. SAS在本服务器并未安装。
 	
-	如果该文件存在，且`which sas`没有给出返回值，请提示管理员将SAS的执行文件软连接到`/usr/bin`中。
+	**解决方案**
+	
+	请联系管理员安装SAS并将执行文件软链接到`/usr/bin`。
 
 ## 在Python中使用
 

@@ -19,15 +19,9 @@ xstata-mp
 	
 	**原因**
 	
-	1. Stata的应用程序尚未加入该账号的`PATH`环境变量中。
+	1. Stata的应用程序尚未加入`PATH`环境变量中。
 	2. Stata在本服务器并未安装。
 	
 	**解决方案**
 	
-	针对第一种情况，可以执行以下命令：
-	
-	```bash
-	echo 'export PATH=$PATH:/usr/local/stata17' >> ~/.bashrc
-	source ~/.bashrc
-	```
-	针对第二种情况，请联系管理员安排安装了Stata的服务器的账号。
+	请联系管理员安装Stata并将执行文件软链接到`/usr/bin`。
