@@ -15,10 +15,12 @@ sas
 
 ??? question "提示`command not found`"
 	
-	**原因**
+	这可能说明该服务器没有安装SAS，或管理员未将SAS执行文件的路径加入PATH中。
 	
-	SAS在本服务器并未安装。
+	通常SAS在Linux系统中的位置为`/usr/local/SASHome/SASFoundation/9.4/sas`。你可以自行检查该文件是否存在。如果存在的话，可以直接运行。
 	
-	**解决方案**
+	```bash
+	/usr/local/SASHome/SASFoundation/9.4/sas
+	```
 	
-	请联系管理员安排安装了SAS的服务器的账号。
+	另外，如果该文件存在，但`sas`命令仍提示`command not found`，请提示管理员将SAS的执行文件软连接到`/usr/bin`中。
