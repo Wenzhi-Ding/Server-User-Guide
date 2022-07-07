@@ -6,6 +6,8 @@
 
 安装与Xshell配套的[Xmanager](https://www.netsarang.com)后，在Xshell中使用相关命令，即可自动调出图形界面。
 
+由于Xmanager没有官方免费版本提供，如需使用请自行考虑在官网购买正版或看看万能的某宝。
+
 ### Xming
 
 [Xming](https://en.wikipedia.org/wiki/Xming)需要与PuTTY搭配使用。

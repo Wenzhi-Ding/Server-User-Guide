@@ -24,13 +24,21 @@
 
 ### 推荐完成
 
+若计划使用Python或Jupyter，请参考：
+
 - [Conda](/02-conda/install/)
 - [Jupyter Lab](/03-jupyter/install)
 
-### 其他
+若只使用Stata或SAS，可以参考：
+
+- [Stata图形界面](/04-stata/gui)
+- [SAS图形界面](/05-sas/gui)
+
+### 其他推荐阅读
 
 - [Linux稳定运行程序](/08-linux/screen/)
 - [避免过度占用资源](/08-linux/smem/)
 - [免密码登录服务器](/08-linux/pubkey/)
+- [Linux的图形界面](/08-linux/gui)
 - [Jupyter中使用Stata](/04-stata/jupyter/)
 - [Jupyter中使用SAS](/05-sas/jupyter/)

@@ -54,7 +54,7 @@ jupyter lab
 screen -r nb
 ```
 
-??? question "执行`screen -r nb`失败，未能正常切换到名为`nb`的桌面。"
+??? question "执行`screen -r nb`失败，未能正常切换到名为`nb`的桌面"
 
     <figure><img src="/assets/screen-attach.png"></figure>
     
