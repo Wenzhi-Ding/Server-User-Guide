@@ -133,6 +133,7 @@ nav:
     - 服务器间同步文件: 08-linux/rsync.md
     - 检查内存缓存占用: 08-linux/smem.md
     - 免密码登录: 08-linux/pubkey.md
+    - 系统管理: 08-linux/system-manage.md
   - Python:
     - 安装: 06-python/install.md
     - 环境管理: 06-python/env.md
