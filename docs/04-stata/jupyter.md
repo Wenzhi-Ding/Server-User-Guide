@@ -1,4 +1,4 @@
-目前（2022年6月），Stata有两种主流的在Jupyter Lab中使用的方案：
+目前，Stata有两种主流的在Jupyter Lab中使用的方案：
 
 1. 官方提供的PyStata，可以在Python内核的笔记本中调用Stata
 	* 优点：跟Python紧密结合，可以随时将Python数据直接输入Stata，运行Stata的统计命令后，将结果提取回Python做进一步处理

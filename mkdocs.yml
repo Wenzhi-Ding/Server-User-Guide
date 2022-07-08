@@ -63,6 +63,7 @@ plugins:
   - minify:
       minify_html: true
   - mkdocs-jupyter
+  - git-revision-date-localized
 
 
 extra:
