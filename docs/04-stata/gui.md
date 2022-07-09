@@ -13,6 +13,14 @@ xstata-mp
 
 <figure><img src="/assets/stata-gui.png"></figure>
 
+??? question "`xstata-mp`还是`xstata`？"
+
+	`xstata-mp`对应的是Stata的MP版本（多核版本），具有较快的运行速度（以及较昂贵的价格）。
+	
+	`xstata`对应的是Stata的SE版本（单核版本）。
+	
+	通常建议默认使用`xstata-mp`。
+	
 ??? question "提示`command not found`"
 
 	<figure><img src="/assets/stata-not-found.png"></figure>
