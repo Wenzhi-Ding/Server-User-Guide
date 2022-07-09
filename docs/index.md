@@ -29,10 +29,14 @@
 - [Conda](/02-conda/install/)
 - [Jupyter Lab](/03-jupyter/install)
 
-若只使用Stata或SAS，可以参考：
+Stata和SAS亦可通过以上方式使用。
 
-- [Stata图形界面](/04-stata/gui)
-- [SAS图形界面](/05-sas/gui)
+若只计划轻度使用Stata或SAS，可以参考：
+
+||Stata|SAS|
+|:-|:-|:-|
+|不在服务器写代码|[Stata命令行](/04-stata/command-line)|[SAS命令行](/05-sas/command-line)|
+|需要在服务器看数据和写代码|[Stata图形界面](/04-stata/gui)|[SAS图形界面](/05-sas/gui)|
 
 ### 其他推荐阅读
 
