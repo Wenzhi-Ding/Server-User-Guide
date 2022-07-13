@@ -127,7 +127,7 @@ jupyter lab --generate-config
 	```python
 	exit()
 	```
-	
+
 !!! note "设定Token"
 	
 	此设定为可选项，并非必需。主要是用于VSCode免密码验证使用Jupyter Lab。
@@ -138,6 +138,16 @@ jupyter lab --generate-config
 	
 	但必须强调的是，这一方式的安全性相较密码登录是有所下降的。
 	
+??? question "启动后提示`IndentationError: unexpected indent`"
+
+	**原因**
+	
+	这是因为`jupyter_lab_config.py`文件中有不正确的缩进，通常是由于取消注释时未将空格一同删掉。
+	
+	**解决方案**
+	
+	修复`jupyter_lab_config.py`中的缩进问题即可。
+
 
 6、通过SFTP将修改好的配置文件传输回服务器上的原位置，替换原本的配置文件。
 
