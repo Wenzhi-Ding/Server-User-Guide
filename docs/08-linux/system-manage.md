@@ -128,3 +128,32 @@ free -h
 swapon -show
 ```
 
+监控缓存预防宕机，可以用`crontab`命令定期运行该脚本（[`py_reminder`](https://github.com/Wenzhi-Ding/py_reminder)是我做的用于便捷发邮件提示的装饰器）。
+
+```python
+import os
+from datetime import datetime
+
+import pandas as pd
+from py_reminder import monitor
+
+
+@monitor('服务器缓存使用率超标')
+def report():
+    return None
+
+
+if __name__ == "__main__":
+    n = datetime.now().strftime('%Y-%m-%d-%H-%M')
+
+    os.system(f'sudo smem -p -s swap >> ~/log/{n}-smem')
+
+    os.system(f'sudo free > ~/log/tmp')
+    df = pd.read_fwf(f'/home/wenzhi/log/tmp', sep=' ')
+    _, tot, used, *_ = df.iloc[1].values
+    swap = used / tot * 100
+
+    if swap > 90:
+        report()
+```
+
