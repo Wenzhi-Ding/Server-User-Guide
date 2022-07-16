@@ -1,4 +1,14 @@
-使用Public Key登录相比起使用密码登录不仅更方便，且更为安全。可以通过以下方式设置免密码登录：
+使用Public Key（公钥）登录相比起使用密码登录不仅更方便，且更为安全。
+
+!!! warning "应确认服务器是否允许该方式"
+	
+	服务器默认是没有开启公钥登录的。请联系管理员确认服务器是否允许公钥登录。
+	
+	由我管理的服务器通常允许。
+
+## 设置
+
+可以通过以下方式设置免密码登录：
 
 1、本地步骤
 
@@ -40,3 +50,15 @@ ssh [username]@[host]
 	```bash
 	restorecon -v ~/.ssh/authorized_keys
 	```
+
+## 管理员设置
+
+允许SSH通过公钥登录：
+
+```bash
+sudo vim /etc/ssh/sshd_config
+```
+
+将`PubkeyAuthentication yes`取消注释。
+
+为提高服务器的安全性，管理员亦可以关闭密码登录，仅允许公钥登录，即将`PasswordAuthentication`设置为`no`。然后用户每次需要添加一个登录设备，需通过管理员把公钥加入对应账户的`~/.ssh/authorized_keys`中。
