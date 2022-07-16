@@ -6,6 +6,8 @@
 	
 	由我管理的服务器通常允许。
 
+	如果使用的是腾讯云、AWS等厂商提供的云服务，需要参考各个厂商自己的政策及教程。
+
 ## 设置
 
 可以通过以下方式设置免密码登录：
@@ -60,5 +62,11 @@ sudo vim /etc/ssh/sshd_config
 ```
 
 将`PubkeyAuthentication yes`取消注释。
+
+随后重启SSH服务即可生效：
+
+```bash
+sudo systemctl restart ssh
+```
 
 为提高服务器的安全性，管理员亦可以关闭密码登录，仅允许公钥登录，即将`PasswordAuthentication`设置为`no`。然后用户每次需要添加一个登录设备，需通过管理员把公钥加入对应账户的`~/.ssh/authorized_keys`中。

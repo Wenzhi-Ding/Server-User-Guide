@@ -68,4 +68,4 @@ sudo smem -p -s swap -U <username>
 
 此部分仅供运维人员参考，普通用户请不要尝试（也没有权限）自行调整Swap。
 
-参考[Swap空间占用过高解决方案](https://www.jianshu.com/p/dbc27148f58c)。
+参考[Swap空间占用过高解决方案](/08-linux/system-manage/#_4)。

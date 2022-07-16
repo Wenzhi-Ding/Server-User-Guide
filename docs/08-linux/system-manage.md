@@ -149,7 +149,7 @@ if __name__ == "__main__":
     os.system(f'sudo smem -p -s swap >> ~/log/{n}-smem')
 
     os.system(f'sudo free > ~/log/tmp')
-    df = pd.read_fwf(f'/home/wenzhi/log/tmp', sep=' ')
+    df = pd.read_fwf(f'/home/xxx/log/tmp', sep=' ')
     _, tot, used, *_ = df.iloc[1].values
     swap = used / tot * 100
 
