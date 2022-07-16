@@ -6,39 +6,39 @@
 
 1、新建会话。
 
-<figure><img src="/assets/xshell-new-connect.png"></figure>
+<figure><img src="/assets/xshell-new-connect.png" alt="xshell-new-connect"></figure>
 
 2、输入连接配置。
 
-<figure><img src="/assets/xshell-config-1.png"></figure>
+<figure><img src="/assets/xshell-config-1.png" alt="xshell-config-1"></figure>
 
 3、输入用户名及密码。
 
-<figure><img src="/assets/xshell-passwd.png"></figure>
+<figure><img src="/assets/xshell-passwd.png" alt="xshell-passwd"></figure>
 
 4、点击“确定”将配置保存至会话管理器。在会话管理器中双击该配置即可登入服务器。出现`<username>@<host>`字样表示已成功登入。
 
-<figure><img src="/assets/xshell-login-success.png"></figure>
+<figure><img src="/assets/xshell-login-success.png" alt="xshell-login-success"></figure>
 
 ## SFTP
 
 1、启动Xftp。输入配置后点链接即可进入文件管理界面。
 
-<figure><img src="/assets/xftp-config.png"></figure>
+<figure><img src="/assets/xftp-config.png" alt="xftp-config"></figure>
 
 2、随后可以在此处查看保存的配置并登入。
 
-<figure><img src="/assets/xftp-all-config.png"></figure>
+<figure><img src="/assets/xftp-all-config.png" alt="xftp-all-config"></figure>
 
 3、设置展示隐藏文件。
 
-<figure><img src="/assets/xftp-show-all-file-1.png"></figure>
+<figure><img src="/assets/xftp-show-all-file-1.png" alt="xftp-show-all-file-1"></figure>
 
-<figure><img src="/assets/xftp-show-all-file-2.png"></figure>
+<figure><img src="/assets/xftp-show-all-file-2.png" alt="xftp-show-all-file-2"></figure>
 
 4、右键文件即可在本地和服务器之间传输文件。
 
-<figure><img src="/assets/xftp-transfer.png"></figure>
+<figure><img src="/assets/xftp-transfer.png" alt="xftp-transfer"></figure>
 
 
 
@@ -50,17 +50,17 @@
 
 1、在会话管理器中右键，进入会话配置的属性。
 
-<figure><img src="/assets/xshell-config-more.png"></figure>
+<figure><img src="/assets/xshell-config-more.png" alt="xshell-config-more"></figure>
 
 2、添加端口侦听规则。
 
 === "1. 设置隧道"
 
-	<figure><img src="/assets/xshell-tunnel.png"></figure>
+	<figure><img src="/assets/xshell-tunnel.png" alt="xshell-tunnel"></figure>
 
 === "2. 设置出入端口"
 
-	<figure><img src="/assets/xshell-port.png"></figure>
+	<figure><img src="/assets/xshell-port.png" alt="xshell-port"></figure>
 
 3、重新连接会话使端口侦听生效。
 
