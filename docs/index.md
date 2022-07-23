@@ -9,7 +9,9 @@
 1. 该指南未覆盖的问题；
 2. 无法快速在指南中找到解决方案的问题。
 
-请及时联系丁文治（微信、Slack或邮箱），我会帮忙解决并更新该指南。
+请及时联系丁文治（微信、Slack或邮箱）或在GitHub上[提Issues](https://github.com/Wenzhi-Ding/Server-User-Guide/issues)，我会帮忙解决并更新该指南。
+
+非常欢迎直接编辑页面后在GitHub上[发起Pull Requests](https://github.com/Wenzhi-Ding/Server-User-Guide/pulls)！
 
 如果你在指南中看到需要联系“管理员”的部分，但你不明白其含义，那么可以忽略这部分。这些要求只在某些服务器上生效。
 
