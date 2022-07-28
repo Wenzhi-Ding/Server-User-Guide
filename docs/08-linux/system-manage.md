@@ -133,27 +133,60 @@ swapon -show
 ```python
 import os
 from datetime import datetime
+import time
 
 import pandas as pd
 from py_reminder import monitor
 
 
-@monitor('服务器缓存使用率超标')
+ROOT = '/home/xxx/'
+RESERVERD_USERS = ['root']
+
+
+@monitor('Monitoring server swap')
 def report():
+    raise Exception('Server swap approaching limit')
     return None
+
+
+def check_swap_usage():
+    os.system(f'sudo free > {ROOT}log/tmp')
+    df = pd.read_fwf(f'{ROOT}log/tmp', sep=' ')
+    _, tot, used, *_ = df.iloc[1].values
+    swap = used / tot * 100
+    return swap
 
 
 if __name__ == "__main__":
     n = datetime.now().strftime('%Y-%m-%d-%H-%M')
 
-    os.system(f'sudo smem -p -s swap >> ~/log/{n}-smem')
+    # Record swap usage into log file
+    os.system(f'sudo smem -ap -s swap >> {ROOT}log/{n}-smem')
 
-    os.system(f'sudo free > ~/log/tmp')
-    df = pd.read_fwf(f'/home/xxx/log/tmp', sep=' ')
-    _, tot, used, *_ = df.iloc[1].values
-    swap = used / tot * 100
+    # Read in log
+    with open(f'{ROOT}log/{n}-smem', 'r') as f:
+        log = f.readlines()
 
-    if swap > 90:
-        report()
+    # Check if swap is approaching limit
+    swap = check_swap_usage()
+    flag = True
+
+    while swap > 90:
+        # Only send email once
+        if flag:
+            report()
+            flag = False
+        
+        # Kill the most consumptive process
+        l = len(log)
+        for _ in range(l):
+            pid, user, *_ = log.pop().split()
+            if user not in RESERVERD_USERS:
+                # print(f'try killing {pid}')
+                os.system(f'sudo kill -9 {pid}')
+                time.sleep(10)  # Have to wait for swap to be cleared
+                break
+
+        swap = check_swap_usage()
 ```
 
