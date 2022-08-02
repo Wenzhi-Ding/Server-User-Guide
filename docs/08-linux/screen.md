@@ -67,3 +67,9 @@ screen -r nb
     先使用Ctrl + A +D确保回到最外层的SSH界面，然后执行`screen -d nb`来解除`nb`桌面的占用状态。之后就可以通过`screen -r nb`正常进入了。
     
     <figure><img src="/assets/screen-detach.png"></figure>
+
+??? question "将Jupyter挂载在后台运行代码并关闭后，再回到Jupyter似乎没有继续运行代码"
+
+    这是因为在本地关闭Jupyter后，Jupyter就不再渲染更新网页了。此时可以通过新增一个单元格，运行`print(1)`之类的代码来检查Jupyter是否能立刻响应。如果不能的话，说明Jupyter仍在运行代码。
+
+    如果需要监控程序运行的情况，建议将运行中输出的内容添加到一个日志文件（随意一个TXT文件即可）。
