@@ -20,12 +20,20 @@
 
 <figure><img src="/assets/xshell-login-success.png" alt="xshell-login-success"></figure>
 
+??? question "Cannot connect to 'http://xxx.xxx.xxx'"
+
+	SSH和SFTP的连接并不是使用HTTP协议。只需要将`xxx.xxx.xxx`填入Host位置即可，不需要添加任何额外的协议（除非你的服务器管理员明确告知你需要）。
+
 ## SFTP
 
 1、启动Xftp。输入配置后点链接即可进入文件管理界面。
 
 <figure><img src="/assets/xftp-config.png" alt="xftp-config"></figure>
 
+??? question "Cannot connect to 'http://xxx.xxx.xxx'"
+
+	SSH和SFTP的连接并不是使用HTTP协议。只需要将`xxx.xxx.xxx`填入Host位置即可，不需要添加任何额外的协议（除非你的服务器管理员明确告知你需要）。
+	
 2、随后可以在此处查看保存的配置并登入。
 
 <figure><img src="/assets/xftp-all-config.png" alt="xftp-all-config"></figure>

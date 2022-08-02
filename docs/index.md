@@ -33,6 +33,9 @@
 
 Stata和SAS亦可通过以上方式使用。
 
+- [Jupyter中使用Stata](/04-stata/jupyter/)
+- [Jupyter中使用SAS](/05-sas/jupyter/)
+
 若只计划轻度使用Stata或SAS，可以参考：
 
 ||Stata|SAS|
@@ -42,9 +45,6 @@ Stata和SAS亦可通过以上方式使用。
 
 ### 其他推荐阅读
 
-- [Linux稳定运行程序](/08-linux/screen/)
-- [避免过度占用资源](/08-linux/smem/)
-- [免密码登录服务器](/08-linux/pubkey/)
-- [Linux的图形界面](/08-linux/gui)
-- [Jupyter中使用Stata](/04-stata/jupyter/)
-- [Jupyter中使用SAS](/05-sas/jupyter/)
+- 断网后程序中断：[Linux后台稳定运行程序](/08-linux/screen/)
+- 服务器宕机：[避免过度占用资源](/08-linux/smem/)
+- 希望有图形界面可以操作：[Linux的图形界面](/08-linux/gui)
