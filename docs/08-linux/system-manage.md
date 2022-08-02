@@ -128,11 +128,11 @@ free -h
 swapon -show
 ```
 
-监控缓存预防宕机，可以用`crontab`命令定期运行该脚本（[`py_reminder`](https://github.com/Wenzhi-Ding/py_reminder)是我做的用于便捷发邮件提示的装饰器）。
+监控缓存预防宕机，可以用`crontab`命令定期运行以下脚本（其中调用的[py_reminder](https://github.com/Wenzhi-Ding/py_reminder)是我写的用于便捷发邮件提示的装饰器）。
 
 ```python
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 import time
 
 import pandas as pd
@@ -157,7 +157,17 @@ def check_swap_usage():
     return swap
 
 
+def remove_outdated_log(ndays=30):
+    now = datetime.now()
+    for f in os.listdir(f'{ROOT}log'):
+        f_path = f'{ROOT}log/{f}'
+        if os.path.isfile(f_path) and now - datetime.fromtimestamp(os.path.getmtime(f_path)) > timedelta(days=ndays):
+            os.remove(f_path)
+
+
 if __name__ == "__main__":
+    remove_outdated_log()
+
     n = datetime.now().strftime('%Y-%m-%d-%H-%M')
 
     # Record swap usage into log file
@@ -189,4 +199,3 @@ if __name__ == "__main__":
 
         swap = check_swap_usage()
 ```
-

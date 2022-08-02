@@ -131,11 +131,11 @@ nav:
     - 基本命令: 08-linux/basic.md
     - 稳定运行程序: 08-linux/screen.md
     - 图形界面: 08-linux/gui.md
-    - 服务器间同步文件: 08-linux/rsync.md
-    - 检查内存缓存占用: 08-linux/smem.md
-    - 免密码登录: 08-linux/pubkey.md
-    - 系统管理: 08-linux/system-manage.md
     - 命令行编辑文件: 08-linux/vim.md
+    - 服务器间同步文件: 08-linux/rsync.md
+    - 免密码登录: 08-linux/pubkey.md
+    - 检查内存缓存占用: 08-linux/smem.md
+    - 系统管理: 08-linux/system-manage.md
   - Python:
     - 安装: 06-python/install.md
     - 环境管理: 06-python/env.md
@@ -144,8 +144,8 @@ nav:
     - Jupyter Lab: 04-stata/jupyter.md
     - 图形界面: 04-stata/gui.md
     - 命令行使用: 04-stata/command-line.md
-    - PyStata Example: 04-stata/pystata.ipynb
-    - Stata Kernel Example: 04-stata/stata_kernel.ipynb
+    - PyStata样例: 04-stata/pystata.ipynb
+    - Stata Kernel样例: 04-stata/stata_kernel.ipynb
   - SAS: 
     - Jupyter Lab: 05-sas/jupyter.md
     - 图形界面: 05-sas/gui.md
