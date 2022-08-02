@@ -51,9 +51,14 @@ jupyter lab
 	
 	**解决方案**
 	
-	如果在SSH终端中，Jupyter Lab显示`The port xxxxx is already in use`，说明是服务器上其他人或应用程序占用了该端口。否则应该是自己电脑上的应用程序占用了该端口。
+	如果在SSH终端中，Jupyter Lab显示`The port xxxxx is already in use`，说明是服务器上其他人或应用程序占用了该端口（称为“服务器端口占用”）。
 	
-	- 简单方案：重启电脑后首先连接服务器并打开Jupyter Lab
+	否则应该是自己电脑上的应用程序占用了该端口（称为“本地端口占用”）。
+	
+	对于服务器端口占用：首先尝试关闭自己之前已经打开了的Jupyter Lab。如果仍然显示`The port xxxxx is already in use`，那很有可能是其他用户占用了该端口。这种情况需要联系管理员来协调。
+
+	对于本地端口占用：
+	- 简单方案：重启自己的电脑后首先连接服务器并打开Jupyter Lab
 	- 精准方案：通过`netstat -aof | findstr:22222`找出占用了22222端口的应用程序。关闭该应用程序后即可正常访问Jupyter Lab。
 
 ??? question "Jupyter Lab密码不正确"
