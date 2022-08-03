@@ -10,9 +10,7 @@
 	* 样例：[Stata Kernel Example](/04-stata/stata_kernel)
 
 
-
-此处推荐使用第一种解决方案。
-
+综合个人使用体验，我认为如果没有必须要用Python才好处理的数据时，还是使用Stata Kernel体验较好。
 
 
 ## 1. PyStata
