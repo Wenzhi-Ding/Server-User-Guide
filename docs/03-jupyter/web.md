@@ -47,20 +47,24 @@ jupyter lab
 
 	**原因**
 	
-	可能其他应用程序或其他人恰巧占用了该端口。
+	可能其他应用程序恰巧占用了该端口。
 	
 	**解决方案**
 	
-	如果在SSH终端中，Jupyter Lab显示`The port xxxxx is already in use`，说明是服务器上其他人或应用程序占用了该端口（称为“服务器端口占用”）。通过`lsof -i | grep xxxx`可以找到占用了该端口的进程号和用户。
-	
-	否则应该是自己电脑上的应用程序占用了该端口（称为“本地端口占用”）。
-	
-	对于服务器端口占用：首先尝试关闭自己之前已经打开了的Jupyter Lab。如果仍然显示`The port xxxxx is already in use`，那很有可能是其他用户占用了该端口。这种情况需要联系管理员来协调。
-
 	对于本地端口占用：
 	
-	- 简单方案：重启自己的电脑后首先连接服务器并打开Jupyter Lab
-	- 精准方案：通过`netstat -aof | findstr:22222`找出占用了22222端口的应用程序。关闭该应用程序后即可正常访问Jupyter Lab。
+	- 简单方案：重启自己的电脑后首先连接服务器并打开Jupyter Lab。
+	- 精准方案：通过`netstat -aof | findstr:xxxxx`（Windows）或`lsof -i | grep xxxx`（Linux或MacOS）找出占用了xxxxx端口的应用程序。关闭该应用程序后即可正常访问Jupyter Lab。
+
+??? question "The port xxxxx is already in use"
+
+	**原因**
+
+	说明服务器上其他人或应用程序占用了该端口（称为“服务器端口占用”）。
+
+	**解决方案**
+
+	对于服务器端口占用：首先尝试关闭自己之前已经打开了的Jupyter Lab。如果仍然显示`The port xxxxx is already in use`，那很有可能是其他用户占用了该端口。通过`lsof -i | grep xxxx`可以找到占用了该端口的进程号和用户。这种情况需要联系管理员来协调。
 
 ??? question "Jupyter Lab密码不正确"
 
