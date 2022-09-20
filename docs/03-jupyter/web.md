@@ -51,7 +51,7 @@ jupyter lab
 	
 	**解决方案**
 	
-	如果在SSH终端中，Jupyter Lab显示`The port xxxxx is already in use`，说明是服务器上其他人或应用程序占用了该端口（称为“服务器端口占用”）。
+	如果在SSH终端中，Jupyter Lab显示`The port xxxxx is already in use`，说明是服务器上其他人或应用程序占用了该端口（称为“服务器端口占用”）。通过`lsof -i | grep xxxx`可以找到占用了该端口的进程号和用户。
 	
 	否则应该是自己电脑上的应用程序占用了该端口（称为“本地端口占用”）。
 	
