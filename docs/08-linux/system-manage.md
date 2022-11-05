@@ -62,13 +62,15 @@ sudo groups <username>
 
 Linux 服务器中权限管理的基本思路是对每个路径都分别规定用户（Owner）、群组（Group）和其他用户（Other）的权限。权限的内容包括读取（Read）、写入（Write）、执行（Execute）。
 
-`-R`参数表示对目录下所有文件执行操作，不指定该参数则仅对文件本身操作。
+### 基本权限管理
 
 更改文件所属用户
 
 ```bash
 sudo chown -R <username> <dir>
 ```
+
+`-R`参数表示对目录下所有文件执行操作，不指定该参数则仅对文件本身操作。
 
 更改文件所属群组
 
@@ -152,7 +154,7 @@ free -h
 swapon -show
 ```
 
-监控缓存预防宕机，可以用`crontab`命令定期运行以下脚本（其中调用的[py_reminder](https://github.com/Wenzhi-Ding/py_reminder)是我写的用于便捷发邮件提示的装饰器）。
+监控缓存预防宕机，可以用 `crontab` 命令定期运行以下脚本（其中调用的 [py_reminder](https://github.com/Wenzhi-Ding/py_reminder) 是我写的用于便捷发邮件提示的装饰器）。
 
 ```python
 import os
