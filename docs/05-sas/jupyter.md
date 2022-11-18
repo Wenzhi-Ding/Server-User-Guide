@@ -108,3 +108,18 @@ df.head()
 help(sas.sd2df)
 ```
 
+### 进阶查询
+
+选择所有与列表中元素可以匹配的数据
+
+```python
+df = sas.sd2df(
+    libref='db', 
+    table='g_names', 
+    dsopts={
+        'where': f'gvkey IN ({",".join([str(int(i)) for i gvkeys])})', 
+    }
+)
+df.head()
+```
+
