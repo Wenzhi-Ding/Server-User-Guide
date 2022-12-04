@@ -154,6 +154,7 @@ nav:
     - JMP: 05-sas/jmp.md
   - SQL:
     - PostgreSQL: 10-sql/postgre.md
+    - SQLite: 10-sql/sqlite.md
   - 数据及权限: data.md
   - 推荐实践: 
     - 项目文件管理: 11-practice/file-index.md
