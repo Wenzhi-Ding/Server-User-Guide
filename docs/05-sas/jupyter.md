@@ -123,3 +123,15 @@ df = sas.sd2df(
 df.head()
 ```
 
+在 `WHERE` 语句中按日期查询
+
+```python
+df = sas.sd2df(
+    libref='db', 
+    table='g_names', 
+    dsopts={
+        'where': 'date > "01JAN2015"d', 
+    }
+)
+df.head()
+```
