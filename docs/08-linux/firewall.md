@@ -10,8 +10,16 @@ sudo ufw allow from x.x.x.x/xx to any port 22 proto tcp
 
 可以使用 Python 脚本自动完成
 
+增加 IP 到白名单：
+
 ```bash
-python whitelist.py <ip1> <ip2> ...
+python whitelist.py A <IP1> <IP2> ...
+```
+
+从白名单移除 IP：
+
+```bash
+python whitelist.py D <IP1> <IP2> ...
 ```
 
 脚本如下：
@@ -23,7 +31,11 @@ import ipaddress
 from os.path import expanduser
 home = expanduser("~")
 
-input_ips = set(sys.argv[1:])
+action = sys.argv[1]
+if action not in ['A', 'D']:
+    raise ValueError('Script should be called as "python whitelist.py A|D <IP1> <IP2> ...". A - add, D - delete.')
+
+input_ips = set(sys.argv[2:])
 add_ips = set()
 
 for ip in input_ips:  # Standardize IP format
@@ -49,7 +61,8 @@ for line in lines:
     if line.startswith('ALL:'):
         line = line.replace('ALL:', '').replace(' ', '').strip().split(',')
         # print(line)
-        ips = set(line) | add_ips
+        if action == "A": ips = set(line) | add_ips
+        else: ips = set(line) - add_ips
         new_lines.append(f'ALL:{",".join(ips)}\n')
     else:
         new_lines.append(line)
@@ -63,7 +76,8 @@ os.system(f'sudo rm {home}/hosts.allow.tmp')
 
 # Add new IPs to firewall
 for ip in add_ips:
-    os.system(f'sudo ufw allow from {ip} to any port 22 proto tcp')
+    if action == "A": os.system(f'sudo ufw allow from {ip} to any port 22 proto tcp')
+    else: os.system(f'sudo ufw delete allow from {ip} to any port 22 proto tcp')
 
 os.system('sudo ufw reload')
 ```
