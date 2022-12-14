@@ -2,6 +2,12 @@
 
 macOS中可以使用Terminal完成SSH连接，使用[FileZilla](https://filezilla-project.org/download.php?platform=osx)完成SFTP连接。
 
+!!! note "IP白名单"
+
+	由于服务器可能设置了禁止外网访问（本中心的服务器已全部禁止外网访问），请首先向管理员申报你至多3个常用的IP地址，以豁免内网登陆的要求。
+
+	公网IP地址获取方式：在百度搜索“IP”即可得到
+
 ## SSH
 
 在Terminal中输入如下命令后输入密码即可登入：

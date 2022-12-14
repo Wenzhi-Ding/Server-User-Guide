@@ -136,6 +136,7 @@ nav:
     - 免密码登录: 08-linux/pubkey.md
     - 检查内存缓存占用: 08-linux/smem.md
     - 系统管理: 08-linux/system-manage.md
+    - 防火墙与访问限制: 08-linux/firewall.md
   - Python:
     - 安装: 06-python/install.md
     - 环境管理: 06-python/env.md
