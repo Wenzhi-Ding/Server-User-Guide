@@ -130,6 +130,14 @@ setfacl -d -m g::rwx <directory>
 getfacl <directory>
 ```
 
+## 存储管理
+
+检查文件夹占用大小
+
+```bash
+du -h --max-depth=1 <folder>
+```
+
 ## 缓存管理
 
 增加一个Swap分区
