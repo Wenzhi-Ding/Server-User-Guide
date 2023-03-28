@@ -6,7 +6,7 @@ macOS中可以使用 Terminal 完成 SSH 连接，使用 [FileZilla](https://fil
 
 	由于服务器可能设置了禁止外网访问（本中心的服务器已全部禁止外网访问），请首先向管理员申报你至多 3 个常用的 IP 地址，以豁免内网登陆的要求。
 
-	公网 IP 地址获取方式：访问 [ip4.me](https://ip4.me)
+	公网 IP 地址获取方式：访问 [ip4.me](https://ip4.me){:target="_blank"}
 
     请不要在挂代理、VPN 的情况下查询。否则要么无法查到 IP，要么会返回公共机房的 IP。
 
