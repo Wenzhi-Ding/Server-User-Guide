@@ -233,3 +233,16 @@ if __name__ == "__main__":
 
         swap = check_swap_usage()
 ```
+
+## 限制用户资源占用
+
+可以通过以下方法限制单个用户可以使用的资源数量：
+
+1. 打开 `/etc/security/limits.conf` 文件
+2. 添加一行 `[domain]   hard    [option]    [size]`
+3. 保存后将该用户所有会话注销：`sudo pkill -u [user]`
+
+常用的限制选项包括：
+
+- `as`：总共可以使用多少 Kb 的内存
+- `nproc`：总共可以使用多少个进程
