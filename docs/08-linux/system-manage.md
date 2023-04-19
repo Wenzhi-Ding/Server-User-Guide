@@ -253,3 +253,25 @@ if __name__ == "__main__":
 @limit    hard    nproc    50
 @limit    hard    as       20480000
 ```
+
+## 清除“僵尸”进程
+
+有些用户的进程没有妥善的关闭，会长期挂在后台，可能占用大量的内存或缓存。此时可以通过这个脚本清除 7 天前创建的进程：
+
+### 按父进程清除
+
+比如某用户的 Jupyter Lab 下挂了大量长期未用的 Kernel：
+
+```bash
+sudo ps -eo pid,ppid,lstart | grep "<parent_pid>" | awk '$1 != "<parent_pid>" && (systime() - mktime(gensub(/ /, "0 ", "g", $3) " " $4 " " $5 " " $6 " " $7) > 60*60*24*7) {print $1}' | xargs sudo kill
+```
+
+注意替换命令中的两个 `<parent_pid>` 为需要清理过期进程的父进程（比如 Jupyter Lab）
+
+### 按用户清除
+
+```bash
+sudo ps -eo pid,user,lstart | grep "<username>" | awk '$1 != "<username>" && (systime() - mktime(gensub(/ /, "0 ", "g", $4) " " $5 " " $6 " " $7 " " $8) > 60*60*24*7) {print $1}' | xargs sudo kill
+```
+
+注意替换命令中的两个 `<username>` 为用户名。
