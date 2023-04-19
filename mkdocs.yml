@@ -2,12 +2,12 @@ site_name: 服务器使用指南
 site_url: https://guide.wenzhi-ding.com/
 site_author: 丁文治
 site_description: >-
-  本网站为以学术研究为目标的服务器用户提供使用指引。
+  本网站为用户使用 Linux 服务器进行学术研究提供使用指引。
 
 repo_name: Wenzhi-Ding/Server_User_Guide
 repo_url: https://github.com/Wenzhi-Ding/Server_User_Guide
 
-copyright: Copright &copy 2021 - 2022 丁文治
+copyright: Copright &copy 2021 - 2023 丁文治
 
 theme:
   name: material
