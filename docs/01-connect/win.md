@@ -32,6 +32,10 @@
 
 	SSH 和 SFTP 的连接并不是使用 HTTP 协议。只需要将 `xxx.xxx.xxx` 填入 Host 位置即可，不需要添加任何额外的协议（除非你的服务器管理员明确告知你需要）。
 
+??? question "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!"
+
+	出现该错误提示表示远程服务器的密钥修改过了（比如重装了系统、重新生成了密钥等）。此时需要将自己系统的 `known_hosts` 文件中该服务器的公钥删除。
+
 ## SFTP
 
 1、启动 Xftp。输入配置后点链接即可进入文件管理界面。

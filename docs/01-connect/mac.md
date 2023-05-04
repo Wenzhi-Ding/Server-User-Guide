@@ -37,6 +37,10 @@ ssh <username>@<host>
     
     - https://blog.csdn.net/wd2014610/article/details/85639741
 
+??? question "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!"
+
+	出现该错误提示表示远程服务器的密钥修改过了（比如重装了系统、重新生成了密钥等）。此时需要将自己系统的 `known_hosts` 文件中该服务器的公钥删除。
+    
 ## SFTP
 
 推荐使用 [FileZilla](https://filezilla-project.org/download.php?platform=osx)。配置可参考 [Windows 的 SFTP 章节](/01-connect/win/#sftp)。FileZilla 默认不会指明端口号，请填写端口号为 22。
