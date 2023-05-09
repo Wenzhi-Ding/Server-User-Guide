@@ -113,16 +113,18 @@ sudo chmod -R <mode> <dir>
 设置权限继承
 
 ```bash
-chmod g+s <directory>
+chmod g+s <path-to-parent-directory>
 ```
 
 设置默认权限
 
 ```bash
-setfacl -d -m g::rwx <directory>
+setfacl -d -m g::rwx <path-to-parent-directory>
 ```
 
-`-d` 表示默认权限，`-m` 表示修改，`g` 表示群组，`o` 表示其他用户。
+`-d` 表示默认权限，`-m` 表示修改，`u` 表示用户，`g` 表示群组，`o` 表示其他用户。`rwx` 分别表示读取、写入和执行权限。
+
+本命令的作用就是设置该路径下的新文件的默认权限。`g::rwx` 表示新文件都跟上级目录的群组一样，且该群组对新文件拥有全部三种权限。
 
 查看权限设置
 
