@@ -57,6 +57,17 @@ ssh [username]@[host]
 	restorecon -v ~/.ssh/authorized_keys
 	```
 
+??? question "我需要使用指定的私钥文件来登录"
+
+	在 `~\.ssh\config` 文件中，编辑如下
+
+	```bash
+	Host <host name>
+		HostName <host name>
+		IdentityFile "<path to private key>"
+		User <username>
+	```
+
 ## 管理员设置
 
 允许 SSH 通过公钥登录：
