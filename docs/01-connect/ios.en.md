@@ -1,0 +1,1 @@
+The server interacts with commands through [SSH](https://en.wikipedia.org/wiki/Secure_Shell) and transfers files through [SFTP](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol). Different operating systems have different recommendations for SSH and SFTP clients.
