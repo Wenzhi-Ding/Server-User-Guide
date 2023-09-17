@@ -63,6 +63,75 @@ plugins:
   - minify:
       minify_html: true
   - mkdocs-jupyter
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: zh
+          default: true
+          name: Chinese
+          build: true
+        - locale: en
+          name: English
+          build: true
+          site_name: Server User Guide
+          copyright: Copyright &copy 2021 - 2023 Wenzhi Ding (Dave)
+          nav:
+                  - Home: index.md
+                  - Connect:
+                    - Windows: 01-connect/win.md
+                    - macOS: 01-connect/mac.md
+                    - Android: 01-connect/android.md
+                    - iOS: 01-connect/ios.md
+                  - Conda:
+                    - Installation: 02-conda/install.md
+                    - Usage: 02-conda/use.md
+                  - Jupyter Lab:
+                    - Installation: 03-jupyter/install.md
+                    - Web Version: 03-jupyter/web.md
+                    - VSCode Version: 03-jupyter/vscode.md
+                    - Usage Guide: 03-jupyter/use.md
+                  - Linux:
+                    - Basic Commands: 08-linux/basic.md
+                    - Running Programs in the Background: 08-linux/screen.md
+                    - Graphical Interface: 08-linux/gui.md
+                    - Editing Files in Command Line: 08-linux/vim.md
+                    - Synchronizing Files Between Servers: 08-linux/rsync.md
+                    - Passwordless Login: 08-linux/pubkey.md
+                    - Checking Memory Cache Usage: 08-linux/smem.md
+                    - System Management: 08-linux/system-manage.md
+                    - Firewall and Access Restrictions: 08-linux/firewall.md
+                  - Python:
+                    - Installation: 06-python/install.md
+                    - Environment Management: 06-python/env.md
+                    - Using Multiple Processes: 06-python/parallel.md
+                    - Matplotlib: 06-python/matplotlib.md
+                    - Pandas: 06-python/pandas.md
+                  - Stata:
+                    - Using Stata in Jupyter Lab: 04-stata/jupyter.md
+                    - Graphical Interface: 04-stata/gui.md
+                    - Command Line Usage: 04-stata/command-line.md
+                    - PyStata Examples: 04-stata/pystata.ipynb
+                    - Stata Kernel Examples: 04-stata/stata_kernel.ipynb
+                  - SAS:
+                    - Using SAS in Jupyter Lab: 05-sas/jupyter.md
+                    - Graphical Interface: 05-sas/gui.md
+                    - Command Line Usage: 05-sas/command-line.md
+                    - JMP: 05-sas/jmp.md
+                  - SQL:
+                    - PostgreSQL: 10-sql/postgre.md
+                    - SQLite: 10-sql/sqlite.md
+                  - GPU:
+                    - CUDA: 12-gpu/cuda.md
+                  - Data and Permissions: data.md
+                  - Recommended Practices:
+                    - Project File Management: 11-practice/file-index.md
+                    - Git Version Control: 11-practice/git.md
+                  - Team Collaboration: team.md
+                  # - R:
+                  #   - RStudio: 07-r/rstudio.md
+                  # - MATLAB:
+                  #   - Official Solution: 09-matlab/official.md
+
   - git-revision-date-localized
 
 

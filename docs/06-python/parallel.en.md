@@ -1,0 +1,3 @@
+In Python, there are multiple ways to use multiprocessing, such as Multiprocessing and Pandarallel. Usually, beginners do not consider the issue of memory usage when using multiprocessing to process large data. In Linux systems, once the memory and cache are fully occupied, the system may crash.
+
+The simplest way to avoid excessive memory usage is to optimize the function you submit to multiprocessing, minimizing the size of the input data passed to that function.
