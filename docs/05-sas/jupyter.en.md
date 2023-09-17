@@ -41,6 +41,8 @@ which sas
 	
 	Please contact the administrator to install SAS and create a symbolic link to the executable in `/usr/bin`.
 
+    CFID users can simply use this path: `/usr/local/SASHome/SASFoundation/9.4/bin/sas_u8`.
+
 ## Using SAS in Python
 
 The official `saspy` reference code provided by SAS can be found at: [saspy-examples](https://github.com/sassoftware/saspy-examples/)

@@ -2,6 +2,10 @@
 
 This manual provides multiple usage guides from basic to advanced.
 
+Please click translate button at the top of the page to view this site in other languages.
+
+The English version is contributed by [Nikhil](https://github.com/nikhil-nix). Contents are synced to 17/09/2023.
+
 ## User Feedback
 
 If you encounter any of the following during the use of the server:

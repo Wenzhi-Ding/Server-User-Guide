@@ -39,6 +39,8 @@ which sas
 	
 	请联系管理员安装SAS并将执行文件软链接到`/usr/bin`。
 
+    CFID 的用户可以直接使用 `/usr/local/SASHome/SASFoundation/9.4/bin/sas_u8` 这个路径。
+
 ## 在Python中使用
 
 SAS官方提供的`saspy`参考代码：[saspy-examples](https://github.com/sassoftware/saspy-examples/)

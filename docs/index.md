@@ -2,6 +2,8 @@
 
 本手册提供了从基础到进阶的多个使用指引。
 
+Please click translate button at the top of the page to view this site in other languages.
+
 ## 用户反馈
 
 服务器使用过程中如遇到任何：

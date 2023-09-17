@@ -3,6 +3,7 @@ site_url: https://guide.wenzhi-ding.com/
 site_author: 丁文治
 site_description: >-
   本网站为用户使用 Linux 服务器进行学术研究提供使用指引。
+  This website provide guidance for using Linux servers for academic research.
 
 repo_name: Wenzhi-Ding/Server_User_Guide
 repo_url: https://github.com/Wenzhi-Ding/Server_User_Guide
@@ -68,13 +69,13 @@ plugins:
       languages:
         - locale: zh
           default: true
-          name: Chinese
+          name: 中文
           build: true
         - locale: en
           name: English
           build: true
           site_name: Server User Guide
-          copyright: Copyright &copy 2021 - 2023 Wenzhi Ding (Dave)
+          copyright: Copyright &copy 2021 - 2023 Wenzhi (Dave) Ding
           nav:
                   - Home: index.md
                   - Connect:
@@ -127,11 +128,6 @@ plugins:
                     - Project File Management: 11-practice/file-index.md
                     - Git Version Control: 11-practice/git.md
                   - Team Collaboration: team.md
-                  # - R:
-                  #   - RStudio: 07-r/rstudio.md
-                  # - MATLAB:
-                  #   - Official Solution: 09-matlab/official.md
-
   - git-revision-date-localized
 
 
