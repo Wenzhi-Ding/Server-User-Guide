@@ -101,6 +101,7 @@ plugins:
                     - Checking Memory Cache Usage: 08-linux/smem.md
                     - System Management: 08-linux/system-manage.md
                     - Firewall and Access Restrictions: 08-linux/firewall.md
+                    - Jump Proxy: 08-linux/jump-proxy.md
                   - Python:
                     - Installation: 06-python/install.md
                     - Environment Management: 06-python/env.md
@@ -202,6 +203,7 @@ nav:
     - 检查内存缓存占用: 08-linux/smem.md
     - 系统管理: 08-linux/system-manage.md
     - 防火墙与访问限制: 08-linux/firewall.md
+    - 跳板代理: 08-linux/jump-proxy.md
   - Python:
     - 安装: 06-python/install.md
     - 环境管理: 06-python/env.md

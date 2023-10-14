@@ -68,6 +68,11 @@ ssh [username]@[host]
 		User <username>
 	```
 
+??? question "一直提示 Permission denied"
+
+	这可能是由于家目录的权限设置不正确。如果家目录的权限是 777，就无法使用密钥登录该账号。可以改为 755 或更严格的权限。
+	
+
 ## 管理员设置
 
 允许 SSH 通过公钥登录：
