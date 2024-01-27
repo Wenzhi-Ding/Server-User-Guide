@@ -63,7 +63,7 @@ plugins:
   - search
   - minify:
       minify_html: true
-  - mkdocs-jupyter
+  # - mkdocs-jupyter
   - i18n:
       docs_structure: suffix
       languages:
@@ -154,9 +154,6 @@ markdown_extensions:
       smart_enable: all
   - pymdownx.caret
   - pymdownx.details
-  - pymdownx.emoji:
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      emoji_index: !!python/name:materialx.emoji.twemoji
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -214,8 +211,8 @@ nav:
     - Jupyter Lab: 04-stata/jupyter.md
     - 图形界面: 04-stata/gui.md
     - 命令行使用: 04-stata/command-line.md
-    - PyStata样例: 04-stata/pystata.ipynb
-    - Stata Kernel样例: 04-stata/stata_kernel.ipynb
+    # - PyStata样例: 04-stata/pystata.ipynb
+    # - Stata Kernel样例: 04-stata/stata_kernel.ipynb
   - SAS: 
     - Jupyter Lab: 05-sas/jupyter.md
     - 图形界面: 05-sas/gui.md
@@ -226,6 +223,7 @@ nav:
     - SQLite: 10-sql/sqlite.md
   - GPU:
     - CUDA: 12-gpu/cuda.md
+    - 升级: 12-gpu/upgrade.md
   - 数据及权限: data.md
   - 推荐实践: 
     - 项目文件管理: 11-practice/file-index.md
