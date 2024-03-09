@@ -8,6 +8,19 @@ home
   	\- 2022_us_election
 ```
 
+更改路径下所有文件的组别归属和权限：
+
+```bash
+sudo chgrp -R team_trump team_trump
+sudo chmod -R 770 team_trump
+```
+
+此外，管理员需要设定该路径的默认权限模式：
+
+```bash
+sudo chmod g+s team_trump
+```
+
 ??? question "如果在Jupyter Lab中无法找到该文件夹"
 
 	**原因**

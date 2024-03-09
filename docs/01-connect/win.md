@@ -1,6 +1,8 @@
 服务器通过 [SSH](https://en.wikipedia.org/wiki/Secure_Shell) 的方式进行命令的交互，通过 [SFTP](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol) 的方式进行文件的传输。在不同的操作系统中，对于 SSH 和 SFTP 客户端有不同的推荐。
 
-推荐使用 Xshell 和 Xftp 连接服务器，免费版可以通过此[链接](https://www.xshell.com/zh/free-for-home-school/)下载。
+推荐使用 Xshell 和 Xftp 连接服务器，免费版可以通过此[链接](https://www.xshell.com/zh/free-for-home-school/)下载。用户界面比较友好、容易使用。
+
+但由于 Xshell 和 Xftp 是收费软件，免费版限制较多，当您比较熟悉 SSH 和 SFTP 的操作之后，可以考虑使用 VS Code 搭配 SSH 插件作为 SSH 客户端、[WinSCP](https://winscp.net/eng/download.php) 作为 SFTP 客户端。
 
 !!! warning "IP 白名单"
 
