@@ -87,9 +87,9 @@ plugins:
                     - Installation: 02-conda/install.md
                     - Usage: 02-conda/use.md
                   - Jupyter Lab:
+                    - VSCode Version: 03-jupyter/vscode.md
                     - Installation: 03-jupyter/install.md
                     - Web Version: 03-jupyter/web.md
-                    - VSCode Version: 03-jupyter/vscode.md
                     - Usage Guide: 03-jupyter/use.md
                   - Linux:
                     - Basic Commands: 08-linux/basic.md
@@ -186,9 +186,9 @@ nav:
     - 安装: 02-conda/install.md
     - 使用: 02-conda/use.md
   - Jupyter Lab:
+    - VSCode版: 03-jupyter/vscode.md
     - 安装: 03-jupyter/install.md
     - 网页版: 03-jupyter/web.md
-    - VSCode版: 03-jupyter/vscode.md
     - 操作简介: 03-jupyter/use.md
   - Linux:
     - 基本命令: 08-linux/basic.md

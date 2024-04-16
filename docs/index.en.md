@@ -56,3 +56,4 @@ If you only plan to use Stata or SAS lightly, you can refer to:
 - Program interruption after network disconnection: [Stable Running of Programs in the Background on Linux](/en/08-linux/screen/)
 - Server crash: [Avoiding Excessive Resource Usage](/en/08-linux/smem/)
 - Need a graphical interface for operation: [Linux's Graphical Interface](/en/08-linux/gui)
+- Other reference: [How to use servers? - Seasoning - Zhihu](https://www.zhihu.com/question/506241986/answer/3457669268)

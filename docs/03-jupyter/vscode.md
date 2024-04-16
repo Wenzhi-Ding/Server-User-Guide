@@ -1,8 +1,4 @@
-!!! warning "请先了解以下内容再配置 VSCode 版的 Jupyter"
-
-	- [网页版](03-jupyter/web)的设置
-	- 使用 Screen 命令将 Jupyter Lab [挂载于后台](/08-linux/screen)
-	- [SSH 免密码登录](/08-linux/pubkey)
+建议在 VSCode 中使用 Jupyter。
 
 VSCode 版本的好处是可以使用 VSCode 中丰富的插件，比如[查看变量表和值](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_variable-explorer-and-data-viewer)、代码分屏（以上两个是网页版的硬伤）、自动补全、快速跳转、代码纠错、显示函数参数文档、自定义主题、交互式的 Git 版本管理等（如 [PyLance](https://github.com/microsoft/pylance-release)、[GitHub Copilot](https://github.com/features/copilot)、[GitHub Theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)）
 

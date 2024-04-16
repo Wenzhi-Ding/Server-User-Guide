@@ -54,3 +54,4 @@ Stata 和 SAS 亦可通过以上方式使用。
 - 断网后程序中断：[Linux 后台稳定运行程序](/08-linux/screen/)
 - 服务器宕机：[避免过度占用资源](/08-linux/smem/)
 - 希望有图形界面可以操作：[Linux 的图形界面](/08-linux/gui)
+- 其他参考：[怎么熟练使用服务器并避免给实验室添麻烦呢？ - Seasoning的回答 - 知乎](https://www.zhihu.com/question/506241986/answer/3457669268)

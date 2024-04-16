@@ -1,8 +1,4 @@
-!!! warning "Please understand the following content before configuring VSCode version of Jupyter"
-
-	- [Settings](03-jupyter/web) for the web version
-	- Use the Screen command to [run Jupyter Lab in the background](/08-linux/screen)
-	- [SSH passwordless login](/08-linux/pubkey)
+You are encouraged to use Jupyter with VSCode instead of its original interface.
 
 The advantage of the VSCode version is that you can use the rich plugins available in VSCode, such as [variable explorer and data viewer](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_variable-explorer-and-data-viewer), code splitting (which are drawbacks of the web version), auto-completion, quick navigation, code correction, displaying function parameter documentation, custom themes, and interactive Git version control (e.g., [PyLance](https://github.com/microsoft/pylance-release), [GitHub Copilot](https://github.com/features/copilot), [GitHub Theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)).
 
