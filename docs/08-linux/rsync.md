@@ -37,6 +37,12 @@ rsync -avuz <username>@<remote_host>:/wrdslin/tfn/sasdata/sdc_ni/* /data/dataset
 
 	在 macOS 和 Linux 系统中，输入密码时不会提示你已输入多少位。若看到光标不动请不要理会，只需要正常输入完密码并按回车即可。
 
+??? question "SSH 的登录端口并非默认"
+
+	```bash
+	rsync -avuz -e "ssh -p 22222" <username>@<remote_host>:/wrdslin/tfn/sasdata/sdc_ni/* /data/dataset/sdc
+	```
+
 4、可以通过 SSH 界面或 SFTP 查看下载进程。
 
 ## FTP

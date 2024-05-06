@@ -37,6 +37,12 @@ Generally, after executing this command, you will be prompted to enter a passwor
 
 	In macOS and Linux systems, the cursor doesn't indicate how many characters you've entered when typing a password. If you see the cursor not moving, don't worry about it. Just enter the password normally and press Enter.
 
+??? question "SSH login not at default port"
+
+	```bash
+	rsync -avuz -e "ssh -p 22222" <username>@<remote_host>:/wrdslin/tfn/sasdata/sdc_ni/* /data/dataset/sdc
+	```
+
 4) You can check the download progress through the SSH interface or SFTP.
 
 ## FTP
