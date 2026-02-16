@@ -25,8 +25,8 @@ jobs:
       - name: Deploy to server
         uses: appleboy/scp-action@v0.1.7
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
+          host: wding95.tplinkdns.com
+          username: deployer
           key: ${{ secrets.DEPLOY_KEY }}
           port: 2222
           source: "site/*"
