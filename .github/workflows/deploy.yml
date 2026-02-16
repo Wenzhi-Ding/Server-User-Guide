@@ -28,6 +28,7 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.DEPLOY_KEY }}
+          port: 2222
           source: "site/*"
           target: "/var/www/guide"
           strip_components: 1
