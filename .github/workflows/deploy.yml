@@ -9,14 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
         with:
-          node-version: "24"
-          cache: "npm"
+          fetch-depth: 0
 
-      - run: npm ci
-      - run: npx vite build
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install mkdocs-material mkdocs-minify-plugin mkdocs-i18n mkdocs-git-revision-date-localized-plugin pymdown-extensions
+
+      - run: mkdocs build
 
       - name: Clean target directory
         uses: appleboy/ssh-action@v1
@@ -34,7 +36,7 @@ jobs:
           username: deployer
           key: ${{ secrets.DEPLOY_KEY }}
           port: 33715
-          source: "dist/*"
+          source: "site/*"
           target: "/var/www/guide"
           strip_components: 1
           overwrite: true
