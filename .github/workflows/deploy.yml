@@ -10,27 +10,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
+          node-version: "24"
+          cache: "npm"
 
-      - name: Install dependencies
-        run: |
-          pip install mkdocs-material mkdocs-minify-plugin \
-                      mkdocs-static-i18n mkdocs-git-revision-date-localized-plugin \
-                      pymdown-extensions
+      - run: npm ci
+      - run: npx vite build
 
-      - run: mkdocs build
-
-      - name: Deploy to server
-        uses: appleboy/scp-action@v0.1.7
+      - name: Clean target directory
+        uses: appleboy/ssh-action@v1
         with:
-          host: wding95.tplinkdns.com
+          host: wenzhi-ding.com
           username: deployer
           key: ${{ secrets.DEPLOY_KEY }}
-          port: 2222
-          source: "site/*"
+          port: 33715
+          script: rm -rf /var/www/guide/*
+
+      - name: Deploy to server
+        uses: appleboy/scp-action@v1.0.0
+        with:
+          host: wenzhi-ding.com
+          username: deployer
+          key: ${{ secrets.DEPLOY_KEY }}
+          port: 33715
+          source: "dist/*"
           target: "/var/www/guide"
           strip_components: 1
           overwrite: true
-          rm: true
+          rm: false
