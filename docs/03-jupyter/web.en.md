@@ -1,3 +1,17 @@
+!!! warning "Web version of Jupyter Lab is no longer recommended"
+
+	We now recommend using the [VSCode version of Jupyter Lab](vscode.md). Here's why:
+
+	- VSCode offers a richer plugin ecosystem (code completion, navigation, linting, Copilot, etc.)
+	- VSCode supports variable explorer and data viewer, which the web version does not
+	- VSCode supports code split view, which the web version does not
+	- The web version requires maintaining additional port forwarding configuration; VSCode connects directly via Remote SSH
+	- The web version is prone to interruption during network fluctuations; VSCode is more stable
+
+	The content below is kept for reference.
+
+---
+
 1. Try starting Jupyter Lab. Enter the following command in the server:
 
 ```bash
@@ -16,7 +30,7 @@ If a link ending with `/lab` appears, it means that Jupyter Lab is configured su
 	
 	**Solution**
 	
-	Reconfigure the Jupyter Lab password (Step 5 in [Jupyter Lab installation](/03-jupyter/install/)).
+	Reconfigure the Jupyter Lab password (Step 5 in [Jupyter Lab installation](install.md)).
 
 2. Open a local browser and visit any of the above URLs.
 
@@ -35,7 +49,7 @@ If a link ending with `/lab` appears, it means that Jupyter Lab is configured su
 
 !!! Stable Operation
 
-	If there is a network fluctuation or the SSH terminal is accidentally closed (e.g., computer shutdown, sleep), Jupyter Lab will also stop running. After your Jupyter Lab is configured and accessible, **please refer to the [Screen command tutorial](/08-linux/screen/) to run Jupyter Lab in a separate window**.
+	If there is a network fluctuation or the SSH terminal is accidentally closed (e.g., computer shutdown, sleep), Jupyter Lab will also stop running. After your Jupyter Lab is configured and accessible, **please refer to the [Screen command tutorial](../08-linux/screen.md) to run Jupyter Lab in a separate window**.
 
 !!! Automatic Parentheses Pairing
 
@@ -74,4 +88,4 @@ If a link ending with `/lab` appears, it means that Jupyter Lab is configured su
 	
 	**Solution**
 	
-	Repeat Step 5 in the [installation](/03-jupyter/install) process. After setting the password again, restart Jupyter Lab.
+	Repeat Step 5 in the [installation](install.md) process. After setting the password again, restart Jupyter Lab.

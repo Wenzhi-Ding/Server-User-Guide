@@ -5,7 +5,7 @@ VSCode 版本的好处是可以使用 VSCode 中丰富的插件，比如[查看�
 
 1、在本地安装 VSCode，并安装 RemoteSSH 插件。具体过程可见[官方教程](https://code.visualstudio.com/docs/remote/ssh)。
 
-2、设置 [SSH 免密码登录](/08-linux/pubkey)后，将本地的 SSH 配置文件增加以下内容。
+2、设置 [SSH 免密码登录](../08-linux/pubkey.md)后，将本地的 SSH 配置文件增加以下内容。
 
 本地的 SSH 配置文件的位置通常为（可用 VSCode 或记事本打开编辑）：
 
@@ -24,13 +24,13 @@ Host [host]
 
 3、VSCode 中登录服务器后，在 VSCode 的资源管理器中添加项目文件夹，点击其中的 `ipynb` 文件即可打开 Jupyter Lab。
 
-4、将 Jupyter Lab 设置为[固定 Token 登录](/03-jupyter/install/#__tabbed_1_4)。
+4、将 Jupyter Lab 设置为[固定 Token 登录](install.md#set-token)。
 
 启动 Jupyter Lab，复制包含 Token 的 URI `http://localhost:22222/lab?token=foobar`（注意，在 SSH 终端中显示应为 `http://localhost:22222/lab?token=...`，需要自己将设置好的 Token 填写到 URI 中）
 
 将该 URI 输入给 VSCode 右下角的“Jupyter Server”，即可免于每次登录输入 Jupyter Lab 的密码。
 
-??? question "为何服务器 Conda 环境已配置，运行代码时却提示缺少某些组件？"
+??? question "为何服务器环境已配置，运行代码时却提示缺少某些组件？"
 
 	**原因**
 	
@@ -38,7 +38,7 @@ Host [host]
 	
 	**解决方法**
 	
-	在 VSCode 右上角的内核设定中，选择服务器端的 IPython 内核。主要可以通过 Kernel 的路径、Remote 字样或 Conda 环境名称来确定是否为服务器上的内核。
+	在 VSCode 右上角的内核设定中，选择服务器端的 IPython 内核。主要可以通过 Kernel 的路径、Remote 字样或虚拟环境名称来确定是否为服务器上的内核。
 	
 	<figure><img src="/assets/jupyter-vscode-kernel-select.png"></figure>
 
@@ -46,7 +46,7 @@ Host [host]
 
 ??? question "如何在 SSH 连接中断后恢复内核并继续工作？"
 	
-	首先需要确保已按照[该方式](/08-linux/screen)运行 Jupyter Lab。
+	首先需要确保已按照[该方式](../08-linux/screen.md)运行 Jupyter Lab。
 	
 	在右上角的内核选择中，选择此前该笔记本的内核即可。
 	

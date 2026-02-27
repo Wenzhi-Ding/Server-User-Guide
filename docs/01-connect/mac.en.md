@@ -43,7 +43,7 @@ ssh <username>@<host>
 
 ## SFTP
 
-It is recommended to use FileZilla. Configuration can be referred to in the [SFTP section for Windows](/en/01-connect/win/#sftp). FileZilla does not specify the port number by default, so please enter 22 as the port number.
+It is recommended to use FileZilla. Configuration can be referred to in the [SFTP section for Windows](win.md#sftp). FileZilla does not specify the port number by default, so please enter 22 as the port number.
 
 ## Port Forwarding
 

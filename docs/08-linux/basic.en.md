@@ -173,7 +173,7 @@ Clicking on the various headers (such as `VIRT`, `CPU%`) allows you to sort and 
 
     When not in use for a long time, please close threads in a timely manner to release memory for other users to use. If you find that there is insufficient memory during use and other users are occupying a large amount of memory, please contact the user or coordinate with WenZhi Ding.
 
-    For checking Swap usage, please refer to [this page](/en/08-linux/swap).
+    For checking Swap usage, please refer to [this page](smem.md).
 
 ### Terminating Processes
 
@@ -193,7 +193,7 @@ Obtain the process ID (PID) from the `ps` command or the `htop` command above.
 
 ## Text Operations
 
-Configuration files in Linux are typically in the form of text (even if the file extension is not `.txt` or there is no file extension at all). The easiest way to edit these files is to download them to your local machine via [SFTP](/en/01-connect/win/#sftp), edit them, and then upload them back to their original location.
+Configuration files in Linux are typically in the form of text (even if the file extension is not `.txt` or there is no file extension at all). The easiest way to edit these files is to download them to your local machine via [SFTP](../01-connect/win.md#sftp), edit them, and then upload them back to their original location.
 
 However, for browsing and simple editing, you can do it directly in the SSH terminal. For example, for the `config.ini` file:
 

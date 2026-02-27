@@ -5,7 +5,7 @@
 
 ## SSH & SFTP
 
-对于允许使用 [SSH](/01-connect/win/#ssh) 登录的服务器，目前推荐使用 [SFTP](/01-connect/win/#sftp) 和 `rsync` 命令来完成该工作。
+对于允许使用 [SSH](../01-connect/win.md#ssh) 登录的服务器，目前推荐使用 [SFTP](../01-connect/win.md#sftp) 和 `rsync` 命令来完成该工作。
 
 ??? question "`rsync` 与其他传输方式比的好处？"
 

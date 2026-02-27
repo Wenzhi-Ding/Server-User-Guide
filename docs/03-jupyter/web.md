@@ -1,3 +1,17 @@
+!!! warning "不再推荐使用网页版 Jupyter Lab"
+
+	我们现在推荐使用 [VSCode 版 Jupyter Lab](vscode.md)，原因如下：
+
+	- VSCode 提供更丰富的插件生态（代码补全、跳转、纠错、Copilot 等）
+	- VSCode 支持变量查看器和数据查看器，网页版不支持
+	- VSCode 支持代码分屏，网页版不支持
+	- 网页版需要维护额外的端口转发配置，VSCode 通过 Remote SSH 直接连接
+	- 网页版在网络波动时容易中断，VSCode 更稳定
+
+	以下内容保留供参考。
+
+---
+
 1、尝试启动Jupyter Lab。在服务器中输入以下命令
 
 ```bash
@@ -16,7 +30,7 @@ jupyter lab
 	
 	**解决方案**
 	
-	重新[配置Jupyter Lab的密码](/03-jupyter/install/)（第5步）。
+	重新[配置Jupyter Lab的密码](install.md)（第5步）。
 
 2、打开本地浏览器，访问上述任一网址。
 
@@ -35,7 +49,7 @@ jupyter lab
 
 !!! 稳定运行
 
-	当网络发生波动或SSH终端意外被关闭（比如电脑关机、待机），Jupyter Lab也会终止运行。当您的Jupyter Lab配置完成、可以正常访问后，**请务必参考[Screen命令教程](/08-linux/screen/)将Jupyter Lab挂载于独立的窗口下。**
+	当网络发生波动或SSH终端意外被关闭（比如电脑关机、待机），Jupyter Lab也会终止运行。当您的Jupyter Lab配置完成、可以正常访问后，**请务必参考[Screen命令教程](../08-linux/screen.md)将Jupyter Lab挂载于独立的窗口下。**
 
 !!! 自动完成括号配对
 
@@ -74,4 +88,4 @@ jupyter lab
 	
 	**解决方案**
 	
-	重复[安装](/03-jupyter/install)的第5步。重新设定密码后，重启Jupyter Lab即可。
+	重复[安装](install.md)的第5步。重新设定密码后，重启Jupyter Lab即可。

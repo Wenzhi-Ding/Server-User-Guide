@@ -29,7 +29,7 @@ smem -p -s swap
 
 Meaning of the columns in the image:
 
-- PID: The process ID, which is needed to kill a process ([tutorial on how to kill a process](/08-linux/basic/#_10))
+- PID: The process ID, which is needed to kill a process ([tutorial on how to kill a process](basic.md#terminating-processes))
 - User: The user to whom the process belongs
 - Command: The command that triggered the process
 - **Swap: Cache usage**
@@ -68,4 +68,4 @@ sudo smem -p -s swap -U <username>
 
 This section is only for reference by system administrators. Regular users should not attempt to adjust Swap on their own (nor do they have the permissions to do so).
 
-Refer to the [solution for high Swap space usage](/08-linux/system-manage/#_4).
+Refer to the [solution for high Swap space usage](system-manage.md#cache-management).

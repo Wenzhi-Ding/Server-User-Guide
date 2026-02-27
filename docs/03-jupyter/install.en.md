@@ -2,16 +2,16 @@ We recommend using JupyterLab to write and run code directly on the server.
 
 !!! Port Forwarding
 
-        Before configuring Jupyter Lab, make sure you have set up port forwarding as described in the "Connecting to the Server" section ([Windows](/en/01-connect/win/#_1), [macOS](/en/01-connect/mac/#_1)).
+        Before configuring Jupyter Lab, make sure you have set up port forwarding as described in the "Connecting to the Server" section ([Windows](../01-connect/win.md#_1), [macOS](../01-connect/mac.md#_1)).
 
-!!! Conda
+!!! uv
 
-        If you are not familiar with setting up environments, please install Conda first ([installation guide](/en/02-conda/install)).
+        If you are not familiar with setting up environments, please install uv first ([installation guide](../02-uv/install.md)).
 
-1) Install Jupyter Lab in the Conda environment.
+1) Install Jupyter Lab in the virtual environment.
 
 ```bash
-conda install jupyterlab
+uv add jupyterlab
 ```
 
 2) Check the installation. If the version number is returned successfully, it means the installation was successful.
@@ -46,7 +46,7 @@ jupyter lab --generate-config
 
         **Solution**
 
-        Refer to the [page](/en/01-connect/win/#sftp) for instructions on setting up Xftp to show hidden files.
+        Refer to the [page](../01-connect/win.md#sftp) for instructions on setting up Xftp to show hidden files.
 
 4) Use an SFTP client to download the configuration file to your computer for editing.
 
@@ -127,6 +127,8 @@ jupyter lab --generate-config
         ```python
         exit()
         ```
+
+<a id="set-token"></a>
 
 !!! note "Set a token"
 

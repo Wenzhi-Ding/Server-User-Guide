@@ -1,4 +1,4 @@
-To manage access from specific IP addresses, the server can use the `ufw` and `/etc/hosts.allow` methods. Additionally, it can enhance security by combining it with [public key authentication](/08-linux/pubkey/).
+To manage access from specific IP addresses, the server can use the `ufw` and `/etc/hosts.allow` methods. Additionally, it can enhance security by combining it with [public key authentication](pubkey.md).
 
 ## Whitelist
 

@@ -3,11 +3,11 @@
 1. 官方提供的PyStata，可以在Python内核的笔记本中调用Stata
 	* 优点：跟Python紧密结合，可以随时将Python数据直接输入Stata，运行Stata的统计命令后，将结果提取回Python做进一步处理
 	* 缺点：暂时不支持语法高亮
-	* 样例：[PyStata Example](/04-stata/pystata/)
+	* 样例：[PyStata Example](pystata.ipynb)
 2. Kyle Barron的[Stata Kernel](https://kylebarron.dev/stata_kernel/)
 	* 优点：原生态的Stata使用体验，并且支持语法高亮
 	* 缺点：只能使用Stata本身不灵活的导出方式
-	* 样例：[Stata Kernel Example](/04-stata/stata_kernel)
+	* 样例：[Stata Kernel Example](stata_kernel.ipynb)
 
 
 综合个人使用体验，我认为如果没有必须要用Python才好处理的数据时，还是使用Stata Kernel体验较好。

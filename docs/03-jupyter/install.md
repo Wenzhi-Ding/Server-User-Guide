@@ -2,16 +2,16 @@
 
 !!! 端口转发
 	
-	在配置Jupyter Lab之前，请务必确保已按照第一节“连接服务器”中配置了端口侦听（[Windows](/01-connect/win/#_1)、[macOS](/01-connect/mac/#_1)）。
+	在配置Jupyter Lab之前，请务必确保已按照第一节"连接服务器"中配置了端口侦听（[Windows](../01-connect/win.md#_1)、[macOS](../01-connect/mac.md#_1)）。
 
-!!! Conda
+!!! uv
 
-	若您没有配置环境的经验，请先[安装Conda](/02-conda/install)。
+	若您没有配置环境的经验，请先[安装 uv](../02-uv/install.md)。
 
-1、在Conda环境中安装Jupyter Lab。
+1、在虚拟环境中安装 Jupyter Lab。
 
 ```bash
-conda install jupyterlab
+uv add jupyterlab
 ```
 
 2、检查安装情况。若能正常返回版本号，则表明安装成功。
@@ -46,7 +46,7 @@ jupyter lab --generate-config
 	
 	**解决方案**
 	
-	参考[该页面](/01-connect/win/#sftp)关于Xftp的设置。
+	参考[该页面](../01-connect/win.md#sftp)关于Xftp的设置。
 
 4、使用SFTP客户端将配置文件下载到自己的计算机进行编辑
 
@@ -127,6 +127,8 @@ jupyter lab --generate-config
 	```python
 	exit()
 	```
+
+<a id="set-token"></a>
 
 !!! note "设定Token"
 	

@@ -1,1 +1,1 @@
-I suggest using Conda to [manage the environment](/02-conda/use/#_1).
+I suggest using uv to [manage the environment](../02-uv/use.md).

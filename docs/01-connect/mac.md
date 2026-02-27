@@ -10,7 +10,7 @@ macOS中可以使用 Terminal 完成 SSH 连接，使用 [FileZilla](https://fil
 
     请不要在挂代理、VPN 的情况下查询。否则要么无法查到 IP，要么会返回公共机房的 IP。
 
-    部分团队可以使用[跳板服务器](/08-linux/jump-proxy)绕开限制，详情咨询本团队 IT 负责人。
+    部分团队可以使用[跳板服务器](../08-linux/jump-proxy.md)绕开限制，详情咨询本团队 IT 负责人。
 
 ## SSH
 
@@ -45,7 +45,7 @@ ssh <username>@<host>
     
 ## SFTP
 
-推荐使用 [FileZilla](https://filezilla-project.org/download.php?platform=osx)。配置可参考 [Windows 的 SFTP 章节](/01-connect/win/#sftp)。FileZilla 默认不会指明端口号，请填写端口号为 22。
+推荐使用 [FileZilla](https://filezilla-project.org/download.php?platform=osx)。配置可参考 [Windows 的 SFTP 章节](win.md#sftp)。FileZilla 默认不会指明端口号，请填写端口号为 22。
 
 ## 端口侦听
 

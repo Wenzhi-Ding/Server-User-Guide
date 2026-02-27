@@ -3,12 +3,12 @@ Currently, there are two mainstream solutions for using Stata in Jupyter Lab:
 1. PyStata, provided by Stata, allows calling Stata in a Python notebook with the Python kernel.
    * Pros: It integrates closely with Python, allowing direct input of Python data into Stata. After running Stata's statistical commands, the results can be extracted back to Python for further processing.
    * Cons: Syntax highlighting is not currently supported.
-   * Example: [PyStata Example](/04-stata/pystata/)
+   * Example: [PyStata Example](pystata.ipynb)
 
 2. Kyle Barron's [Stata Kernel](https://kylebarron.dev/stata_kernel/).
    * Pros: It provides a native Stata experience and supports syntax highlighting.
    * Cons: It can only use Stata's inflexible export methods.
-   * Example: [Stata Kernel Example](/04-stata/stata_kernel)
+   * Example: [Stata Kernel Example](stata_kernel.ipynb)
 
 Based on personal experience, if there is no need to process data specifically with Python, using the Stata Kernel provides a better experience.
 

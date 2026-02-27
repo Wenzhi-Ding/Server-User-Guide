@@ -5,7 +5,7 @@ The advantage of the VSCode version is that you can use the rich plugins availab
 
 1) Install VSCode locally and install the RemoteSSH plugin. The specific process can be found in the [official tutorial](https://code.visualstudio.com/docs/remote/ssh).
 
-2) After setting up [SSH passwordless login](/08-linux/pubkey), add the following content to the local SSH configuration file.
+2) After setting up [SSH passwordless login](../08-linux/pubkey.md), add the following content to the local SSH configuration file.
 
 The location of the local SSH configuration file is usually (and can be opened and edited using VSCode or Notepad) (`C:\Users\[local_username]\.ssh\config`) and can be opened and edited using VSCode or Notepad.
 
@@ -24,13 +24,13 @@ Host [host]
 
 3) After logging into the server in VSCode, add the project folder in the VSCode file explorer and click on the `ipynb` file to open Jupyter Lab.
 
-4) Set Jupyter Lab to use a [fixed token for login](/en/03-jupyter/install/#__tabbed_1_4).
+4) Set Jupyter Lab to use a [fixed token for login](install.md#set-token).
 
 Start Jupyter Lab and copy the URI containing the token `http://localhost:22222/lab?token=foobar` (note that it should be displayed as `http://localhost:22222/lab?token=...` in the SSH terminal, and you need to fill in the token you set in the URI).
 
 Enter this URI in the "Jupyter Server" in the bottom right corner of VSCode to avoid entering the Jupyter Lab password every time.
 
-??? question "Why does it show missing components even though the Conda environment on the server is configured?"
+??? question "Why does it show missing components even though the environment on the server is configured?"
 
 	**Reason**
 	
@@ -38,7 +38,7 @@ Enter this URI in the "Jupyter Server" in the bottom right corner of VSCode to a
 	
 	**Solution**
 	
-	In the kernel settings in the top right corner of VSCode, select the IPython kernel on the server side. You can determine if it is a server-side kernel by the path of the kernel, the word "Remote," or the Conda environment name.
+	In the kernel settings in the top right corner of VSCode, select the IPython kernel on the server side. You can determine if it is a server-side kernel by the path of the kernel, the word "Remote," or the virtual environment name.
 	
 	<figure><img src="/assets/jupyter-vscode-kernel-select.png"></figure>
 
@@ -46,7 +46,7 @@ Enter this URI in the "Jupyter Server" in the bottom right corner of VSCode to a
 
 ??? question "How to resume the kernel and continue working after the SSH connection is interrupted?"
 
-	First, make sure you have run Jupyter Lab using [this method](/08-linux/screen).
+	First, make sure you have run Jupyter Lab using [this method](../08-linux/screen.md).
 	
 	In the kernel selection in the top right corner, select the previous kernel of this notebook.
 	

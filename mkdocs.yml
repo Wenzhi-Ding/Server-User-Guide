@@ -13,9 +13,6 @@ copyright: Copright &copy 2021 - 2023 丁文治
 theme:
   name: material
 
-  include_search_page: false
-  search_index_only: true
-
   language: zh
   features:
     - content.code.annotate
@@ -83,14 +80,17 @@ plugins:
                     - macOS: 01-connect/mac.md
                     - Android: 01-connect/android.md
                     - iOS: 01-connect/ios.md
-                  - Conda:
+                  - Python Setup:
+                    - Installation: 02-uv/install.md
+                    - Usage: 02-uv/use.md
+                  - Conda (Legacy):
                     - Installation: 02-conda/install.md
                     - Usage: 02-conda/use.md
                   - Jupyter Lab:
                     - VSCode Version: 03-jupyter/vscode.md
                     - Installation: 03-jupyter/install.md
-                    - Web Version: 03-jupyter/web.md
                     - Usage Guide: 03-jupyter/use.md
+                    - Web Version (Legacy): 03-jupyter/web.md
                   - Linux:
                     - Basic Commands: 08-linux/basic.md
                     - Running Programs in the Background: 08-linux/screen.md
@@ -124,13 +124,13 @@ plugins:
                     - SQLite: 10-sql/sqlite.md
                   - GPU:
                     - CUDA: 12-gpu/cuda.md
+                    - Upgrade: 12-gpu/upgrade.md
                   - Data and Permissions: data.md
                   - Recommended Practices:
                     - Project File Management: 11-practice/file-index.md
                     - Git Version Control: 11-practice/git.md
                   - Team Collaboration: team.md
   - git-revision-date-localized
-
 
 extra:
   analytics:
@@ -182,14 +182,17 @@ nav:
     - macOS: 01-connect/mac.md
     - Android: 01-connect/android.md
     - iOS: 01-connect/ios.md
-  - Conda: 
+  - Python配置:
+    - 安装: 02-uv/install.md
+    - 使用: 02-uv/use.md
+  - Conda（旧版）:
     - 安装: 02-conda/install.md
     - 使用: 02-conda/use.md
   - Jupyter Lab:
     - VSCode版: 03-jupyter/vscode.md
     - 安装: 03-jupyter/install.md
-    - 网页版: 03-jupyter/web.md
     - 操作简介: 03-jupyter/use.md
+    - 网页版（旧版）: 03-jupyter/web.md
   - Linux:
     - 基本命令: 08-linux/basic.md
     - 后台稳定运行程序: 08-linux/screen.md

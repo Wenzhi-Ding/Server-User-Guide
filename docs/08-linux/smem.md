@@ -29,7 +29,7 @@ smem -p -s swap
 
 图中各列的含义：
 
-- PID：进程的ID，决定杀掉某进程时需要用（[关闭进程的教程](/08-linux/basic/#_10)）
+- PID：进程的ID，决定杀掉某进程时需要用（[关闭进程的教程](basic.md#_10)）
 - User：该进程归属的用户
 - Command：该进程由什么命令触发
 - **Swap：缓存占用**
@@ -68,4 +68,4 @@ sudo smem -p -s swap -U <username>
 
 此部分仅供运维人员参考，普通用户请不要尝试（也没有权限）自行调整Swap。
 
-参考[Swap空间占用过高解决方案](/08-linux/system-manage/#_4)。
+参考[Swap空间占用过高解决方案](system-manage.md#_4)。
