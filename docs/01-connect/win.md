@@ -14,6 +14,10 @@
 
 	部分团队可以使用[跳板服务器](../08-linux/jump-proxy.md)绕开限制，详情咨询本团队 IT 负责人。
 
+!!! tip "PolyU 用户"
+
+	如果你是 PolyU 的用户，在连接前请退出所有第三方杀毒软件，仅保留系统自带的 Windows Defender，以通过 GlobalProtect VPN 的安全检查。
+
 ## SSH
 
 1、新建会话。

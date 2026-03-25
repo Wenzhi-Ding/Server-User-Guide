@@ -10,6 +10,10 @@ On macOS, you can use Terminal for SSH connections and [FileZilla](https://filez
 
     Please do not query while using proxies or VPNs. Otherwise, you may either be unable to retrieve the IP or receive the IP of a public data center.
 
+!!! tip "PolyU Users"
+
+	If you are a PolyU user, it is recommended to install [AVG](https://www.avg.com/en-ww/homepage) antivirus software to pass the GlobalProtect VPN security check.
+
 ## SSH
 
 To log in, enter the following command in Terminal and then enter your password:

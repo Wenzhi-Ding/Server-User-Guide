@@ -14,6 +14,10 @@ However, since Xshell and Xftp are paid software with limited features in the fr
 
 	Some teams can use a [jump server](../08-linux/jump-proxy.md) to bypass the restrictions. Please consult the IT administrator of your team for details.
 
+!!! tip "PolyU Users"
+
+	If you are a PolyU user, please quit all third-party antivirus software before connecting, keeping only the built-in Windows Defender, in order to pass the GlobalProtect VPN security check.
+
 ## SSH
 
 1. Create a new session.

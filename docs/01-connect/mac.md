@@ -12,6 +12,10 @@ macOS中可以使用 Terminal 完成 SSH 连接，使用 [FileZilla](https://fil
 
     部分团队可以使用[跳板服务器](../08-linux/jump-proxy.md)绕开限制，详情咨询本团队 IT 负责人。
 
+!!! tip "PolyU 用户"
+
+	如果你是 PolyU 的用户，建议安装 [AVG](https://www.avg.com/en-ww/homepage) 杀毒软件，以通过 GlobalProtect VPN 的安全检查。
+
 ## SSH
 
 在 Terminal 中输入如下命令后输入密码即可登入：
