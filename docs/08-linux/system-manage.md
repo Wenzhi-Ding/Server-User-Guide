@@ -292,7 +292,7 @@ sudo ps -eo pid,user,lstart | grep "<username>" | awk '$1 != "<username>" && (sy
 
 ### 搭建步骤
 
-#### 1. 部署 NFS 服务器
+**1. 部署 NFS 服务器**
 
 选一台存储空间充足的服务器作为 NFS Server，安装并配置：
 
@@ -315,7 +315,7 @@ sudo exportfs -a
 sudo systemctl restart nfs-kernel-server
 ```
 
-#### 2. 在计算服务器上挂载
+**2. 在计算服务器上挂载**
 
 在所有计算节点上执行：
 
@@ -335,7 +335,7 @@ sudo mount -t nfs <nfs-server-ip>:/nfs/data /data
 <nfs-server-ip>:/nfs/data  /data  nfs  ro,defaults  0  0
 ```
 
-#### 3. 统一用户 UID/GID
+**3. 统一用户 UID/GID**
 
 所有服务器上同一用户的 UID 和 GID 必须一致，否则会出现权限问题。建议用脚本批量创建用户时指定固定 UID：
 
@@ -347,7 +347,7 @@ sudo useradd -u 2001 -g 2001 -m -d /home/zhangsan zhangsan
 
 或者使用 LDAP（如 `slapd`）统一管理账号，适合用户量较大的场景。
 
-#### 4. 用户使用 VS Code 连接不同服务器
+**4. 用户使用 VS Code 连接不同服务器**
 
 用户在本地的 `~/.ssh/config` 中配置多台服务器：
 

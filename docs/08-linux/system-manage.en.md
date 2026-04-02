@@ -279,3 +279,109 @@ sudo ps -eo pid,user,lstart | grep "<username>" | awk '$1 != "<username>" && (sy
 ```
 
 Note: Replace `<username>` in the command with the username for cleaning up expired processes.
+
+## Multi-Server Shared Storage and Compute Allocation
+
+When your team has multiple servers with different configurations (e.g., some with GPUs, some with large memory, some CPU-only), you can use **NFS shared storage** so that users store data only once while being able to run computations on any server.
+
+### Core Idea
+
+Mount `/home` (user directories) and `/data` (shared datasets) from an NFS server on all compute nodes. This way:
+
+- User environments (Conda environments, VS Code extensions, etc.) configured on one server are automatically available on all others
+- Shared datasets are stored only once and accessible from every server
+- Users choose which server to connect to via VS Code Remote-SSH based on the compute resources they need
+
+### Setup Steps
+
+**1. Deploy the NFS Server**
+
+Choose a server with sufficient storage as the NFS Server:
+
+```bash
+# Install on the server
+sudo apt install nfs-kernel-server
+
+# Create shared directories
+sudo mkdir -p /nfs/home /nfs/data
+
+# Configure exports (edit /etc/exports)
+/nfs/home  192.168.1.0/24(rw,sync,no_subtree_check)
+/nfs/data  192.168.1.0/24(ro,sync,no_subtree_check)  # Read-only for shared data
+```
+
+In `/etc/exports`, `rw` means read-write and `ro` means read-only. Replace `192.168.1.0/24` with your actual network range. After editing, run:
+
+```bash
+sudo exportfs -a
+sudo systemctl restart nfs-kernel-server
+```
+
+**2. Mount on Compute Servers**
+
+On all compute nodes:
+
+```bash
+# Install NFS client
+sudo apt install nfs-common
+
+# Create mount points
+sudo mkdir -p /home /data
+
+# Test manual mount
+sudo mount -t nfs <nfs-server-ip>:/nfs/home /home
+sudo mount -t nfs <nfs-server-ip>:/nfs/data /data
+
+# Once confirmed, add to /etc/fstab for automatic mounting on boot
+<nfs-server-ip>:/nfs/home  /home  nfs  defaults  0  0
+<nfs-server-ip>:/nfs/data  /data  nfs  ro,defaults  0  0
+```
+
+**3. Unify User UIDs/GIDs Across Servers**
+
+The UID and GID for the same user must be identical across all servers, otherwise you will get permission errors. When creating users, specify fixed UIDs:
+
+```bash
+# Run the same command on all servers to ensure consistent UIDs
+sudo groupadd -g 2001 mygroup
+sudo useradd -u 2001 -g 2001 -m -d /home/zhangsan zhangsan
+```
+
+For larger teams, consider using LDAP (e.g., `slapd`) for centralized account management.
+
+**4. Connect to Different Servers via VS Code**
+
+Users configure multiple servers in their local `~/.ssh/config`:
+
+```
+Host cpu-server
+    HostName 192.168.1.10
+    User zhangsan
+
+Host gpu-server
+    HostName 192.168.1.20
+    User zhangsan
+
+Host bigmem-server
+    HostName 192.168.1.30
+    User zhangsan
+```
+
+In VS Code, click the remote connection icon in the bottom-left corner to switch between servers of different configurations. Since `/home` is shared, code, Conda environments, and VS Code extensions are available regardless of which server you connect to.
+
+### Environment Management
+
+Users are recommended to manage their Python environments with Conda:
+
+```bash
+conda create -n myenv python=3.11
+conda activate myenv
+pip install pandas scikit-learn
+```
+
+Environments are stored in `~/.conda` or `~/miniconda3`, which lives on the shared `/home`. They are automatically available after switching servers.
+
+!!! warning "Caveats"
+    - All servers must share the same CPU architecture (all x86_64 or all ARM), otherwise compiled packages will not work across machines
+    - Users should avoid running VS Code on two servers simultaneously, as `~/.vscode-server` file lock conflicts may cause issues
+    - If high data throughput is needed (e.g., multiple servers reading large datasets concurrently), consider using a 10GbE NIC on the NFS server
