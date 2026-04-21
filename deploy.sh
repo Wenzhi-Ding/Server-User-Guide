@@ -6,6 +6,9 @@ DEPLOY_TARGET="/var/www/guide"
 
 cd "$SCRIPT_DIR"
 
+# Unset VIRTUAL_ENV to avoid conflicts with uv's project environment
+unset VIRTUAL_ENV
+
 usage() {
     cat <<EOF
 Usage: $(basename "$0") [OPTIONS]
