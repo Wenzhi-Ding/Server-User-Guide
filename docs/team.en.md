@@ -10,13 +10,13 @@ home
 
 ??? question "If you cannot find the folder in Jupyter Lab"
 
-	**Reason**
-	
-	Usually, your Jupyter Lab is launched in your own home directory, where you can only see files in your account's root directory.
-	
-	**Solution**
-	
-	Run the following command:
+    **Reason**
+
+    Usually, your Jupyter Lab is launched in your own home directory, where you can only see files in your account's root directory.
+
+    **Solution**
+
+    Run the following command:
 
     ```bash
     ln -s /home/team_trump/2022_us_election ~/2022_us_election
@@ -24,11 +24,11 @@ home
 
     After executing the above command, the project folder should appear in your account's root directory, and accessing it will automatically switch to `/home/team_trump/2022_us_election`.
 
-	By creating a symbolic link, you can create an entry point for the project folder anywhere.
-	
-	```bash
-	ln -s [SOURCE] [TARGET]
-	```
+    By creating a symbolic link, you can create an entry point for the project folder anywhere.
+
+    ```bash
+    ln -s [SOURCE] [TARGET]
+    ```
 
 ## Admin: Configuring Shared Directories
 
