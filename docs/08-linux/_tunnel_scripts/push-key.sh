@@ -87,21 +87,20 @@ else
     fi
 fi
 
-# ---- 写入 PolyU 用户 authorized_keys ----
+# ---- 写入工作服务器 authorized_keys ----
 USER_HOME=$(eval echo "~${USERNAME}")
 if [ -d "${USER_HOME}/.ssh" ]; then
-    # 去重：如果已存在则先删除旧条目
     if grep -qF "${PUBKEY_CONTENT}" "${USER_HOME}/.ssh/authorized_keys" 2>/dev/null; then
-        echo "[*] 公钥已存在于 PolyU 用户 authorized_keys"
+        echo "[*] 公钥已存在于工作服务器 authorized_keys"
     else
         echo "${PUBKEY_CONTENT}" >> "${USER_HOME}/.ssh/authorized_keys"
         chown "${USERNAME}:${USERNAME}" "${USER_HOME}/.ssh/authorized_keys"
-        echo "[✓] 公钥已写入 PolyU ${USERNAME} 的 authorized_keys"
+        echo "[✓] 公钥已写入工作服务器 ${USERNAME} 的 authorized_keys"
     fi
 fi
 
-# ---- 推送到中转服务器 ----
-echo "[*] 推送公钥到中转服务器 (端口 ${PORT}) ..."
+# ---- 推送到跳板服务器 ----
+echo "[*] 推送公钥到跳板服务器 (端口 ${PORT}) ..."
 RELAY_AK_ENTRY="restrict,port-forwarding,permitopen=\"localhost:${PORT}\" ${PUBKEY_CONTENT}"
 
 SSH_CMD="ssh -i ${MGMT_KEY} \
@@ -113,20 +112,20 @@ SSH_CMD="ssh -i ${MGMT_KEY} \
     ${RELAY_MGMT_USER}@${RELAY_HOST}"
 
 if ${SSH_CMD} "grep -qF '${PUBKEY_CONTENT}' /home/tunnel/.ssh/authorized_keys 2>/dev/null"; then
-    echo "    ✓ 公钥已存在于中转服务器"
+    echo "    ✓ 公钥已存在于跳板服务器"
 else
     ${SSH_CMD} "echo '${RELAY_AK_ENTRY}' >> /home/tunnel/.ssh/authorized_keys" && \
-        echo "[✓] 公钥已推送到中转服务器" || \
-        echo "[!] 推送失败 — 检查管理密钥是否已添加到中转服务器"
+        echo "[✓] 公钥已推送到跳板服务器" || \
+        echo "[!] 推送失败 — 检查管理密钥是否已添加到跳板服务器"
 fi
 
 echo ""
 echo "===== 完成 ====="
 echo "用户 ${USERNAME} (端口 ${PORT}) 的 SSH config:"
 echo ""
-echo "  Host polyu"
+echo "  Host my-server"
 echo "      HostName localhost"
 echo "      Port ${PORT}"
-echo "      ProxyJump tunnel@8.218.122.123"
+echo "      ProxyJump tunnel@${RELAY_HOST}"
 echo "      User ${USERNAME}"
 echo "      ServerAliveInterval 30"

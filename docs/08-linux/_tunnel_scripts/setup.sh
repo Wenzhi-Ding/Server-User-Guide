@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================
-# PolyU Reverse SSH Tunnel — 首次安装
+# Reverse SSH Tunnel — 首次安装
 # 需 sudo 执行，仅运行一次
 # ============================================================
 set -euo pipefail
@@ -12,10 +12,10 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 AUTOSSH_DIR="/etc/autossh"
-SERVICE_SRC="${SCRIPT_DIR}/polyu-tunnel@.service"
+SERVICE_SRC="${SCRIPT_DIR}/tunnel@.service"
 ENV_SRC="${SCRIPT_DIR}/tunnel.conf"
 
-echo "===== PolyU Reverse SSH Tunnel 安装 ====="
+echo "===== Reverse SSH Tunnel 安装 ====="
 echo ""
 
 # ---- 1. 创建专用系统用户 ----
@@ -36,21 +36,21 @@ echo "[3/8] 生成隧道密钥 ..."
 if [ -f "${AUTOSSH_DIR}/tunnel_key" ]; then
     echo "    ✓ 隧道密钥已存在，跳过"
 else
-    ssh-keygen -t ed25519 -f "${AUTOSSH_DIR}/tunnel_key" -N "" -C "polyu-tunnel-main"
+    ssh-keygen -t ed25519 -f "${AUTOSSH_DIR}/tunnel_key" -N "" -C "tunnel-main"
     echo "    ✓ 已生成"
 fi
 
-# ---- 4. 生成管理密钥（用于推送/删除用户公钥到中转服务器）----
+# ---- 4. 生成管理密钥（用于推送/删除用户公钥到跳板服务器）----
 echo "[4/8] 生成管理密钥 ..."
 if [ -f "${AUTOSSH_DIR}/management_key" ]; then
     echo "    ✓ 管理密钥已存在，跳过"
 else
-    ssh-keygen -t ed25519 -f "${AUTOSSH_DIR}/management_key" -N "" -C "polyu-management"
+    ssh-keygen -t ed25519 -f "${AUTOSSH_DIR}/management_key" -N "" -C "tunnel-management"
     echo "    ✓ 已生成"
 fi
 
-# ---- 5. 获取中转服务器主机密钥 ----
-echo "[5/8] 获取中转服务器主机密钥 ..."
+# ---- 5. 获取跳板服务器主机密钥 ----
+echo "[5/8] 获取跳板服务器主机密钥 ..."
 source "${ENV_SRC}"
 if [ -f "${AUTOSSH_DIR}/known_hosts" ] && grep -q "${RELAY_HOST}" "${AUTOSSH_DIR}/known_hosts"; then
     echo "    ✓ known_hosts 已存在"
@@ -58,7 +58,7 @@ else
     ssh-keyscan -p "${RELAY_PORT}" "${RELAY_HOST}" > "${AUTOSSH_DIR}/known_hosts" 2>/dev/null
     LINES=$(wc -l < "${AUTOSSH_DIR}/known_hosts")
     if [ "${LINES}" -eq 0 ]; then
-        echo "    ✗ 无法获取主机密钥，检查中转服务器是否可达"
+        echo "    ✗ 无法获取主机密钥，检查跳板服务器是否可达"
         exit 1
     fi
     echo "    ✓ 获取 ${LINES} 个密钥"
@@ -67,16 +67,16 @@ fi
 # ---- 6. 安装配置文件 ----
 echo "[6/8] 安装配置文件 ..."
 cp "${ENV_SRC}" "${AUTOSSH_DIR}/tunnel.conf"
-cp "${SERVICE_SRC}" /etc/systemd/system/polyu-tunnel@.service
-echo "    ✓ tunnel.conf + polyu-tunnel@.service 已安装"
+cp "${SERVICE_SRC}" /etc/systemd/system/tunnel@.service
+echo "    ✓ tunnel.conf + tunnel@.service 已安装"
 
 if [ ! -f "${AUTOSSH_DIR}/port-registry.txt" ]; then
     TODAY=$(date '+%Y-%m-%d')
-    ADMIN_USER=$(logname 2>/dev/null || echo "wenzhi")
+    ADMIN_USER=$(logname 2>/dev/null || echo "admin")
     cat > "${AUTOSSH_DIR}/port-registry.txt" << EOF
 # 端口分配表
 # 格式：端口  用户名  创建日期  备注
-2221	${ADMIN_USER}	${TODAY}	管理员
+10001	${ADMIN_USER}	${TODAY}	管理员
 EOF
     echo "    ✓ 端口分配表已创建"
 else
@@ -108,29 +108,27 @@ systemctl daemon-reload
 
 FIRST_PORT=$(awk '/^[0-9]/{print $1; exit}' "${AUTOSSH_DIR}/port-registry.txt")
 if [ -n "${FIRST_PORT}" ]; then
-    systemctl enable "polyu-tunnel@${FIRST_PORT}"
-    systemctl start "polyu-tunnel@${FIRST_PORT}"
+    systemctl enable "tunnel@${FIRST_PORT}"
+    systemctl start "tunnel@${FIRST_PORT}"
     sleep 2
-    if systemctl is-active --quiet "polyu-tunnel@${FIRST_PORT}"; then
-        echo "    ✓ polyu-tunnel@${FIRST_PORT} 已启动"
+    if systemctl is-active --quiet "tunnel@${FIRST_PORT}"; then
+        echo "    ✓ tunnel@${FIRST_PORT} 已启动"
     else
-        echo "    ✗ 启动失败（公钥可能尚未添加到中转服务器）"
-        echo "    查看日志: journalctl -u polyu-tunnel@${FIRST_PORT} --no-pager -n 20"
+        echo "    ✗ 启动失败（公钥可能尚未添加到跳板服务器）"
+        echo "    查看日志: journalctl -u tunnel@${FIRST_PORT} --no-pager -n 20"
     fi
 fi
-
-rm -f /tmp/tunnel_key /tmp/tunnel_key.pub /tmp/relay_known_hosts
 
 echo ""
 echo "===== 安装完成 ====="
 echo ""
-echo "【下一步】在中转服务器 (8.218.122.123) 上执行以下命令:"
+echo "【下一步】在跳板服务器上执行以下命令:"
 echo ""
 echo "  ─── 1. 创建 tunnel 用户 ───"
 echo "  sudo useradd -m -s /usr/sbin/nologin tunnel"
 echo "  sudo mkdir -p /home/tunnel/.ssh"
 echo ""
-echo "  ─── 2. 写入隧道公钥（PolyU 用来建隧道的）───"
+echo "  ─── 2. 写入隧道公钥（用来建隧道的）───"
 echo "  echo 'restrict,port-forwarding,permitopen=\"localhost:22\" $(cat ${AUTOSSH_DIR}/tunnel_key.pub)' | \\"
 echo "      sudo tee /home/tunnel/.ssh/authorized_keys"
 echo ""
@@ -141,5 +139,3 @@ echo ""
 echo "  sudo chown -R tunnel:tunnel /home/tunnel/.ssh"
 echo "  sudo chmod 700 /home/tunnel/.ssh"
 echo "  sudo chmod 600 /home/tunnel/.ssh/authorized_keys"
-echo ""
-echo "完成后回来运行: sudo ./setup.sh --verify"

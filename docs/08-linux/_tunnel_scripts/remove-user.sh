@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================
-# 删除隧道用户 + 从中转服务器清除公钥
+# 删除隧道用户 + 从跳板服务器清除公钥
 # 用法: sudo ./remove-user.sh <用户名> [--delete-home]
 # ============================================================
 set -euo pipefail
@@ -32,12 +32,12 @@ if [ "${CONFIRM}" != "y" ] && [ "${CONFIRM}" != "Y" ]; then
 fi
 
 # ---- 停止并禁用隧道实例 ----
-echo "[*] 停止 polyu-tunnel@${PORT} ..."
-systemctl disable --now "polyu-tunnel@${PORT}" 2>/dev/null || true
+echo "[*] 停止 tunnel@${PORT} ..."
+systemctl disable --now "tunnel@${PORT}" 2>/dev/null || true
 echo "    ✓ 已停止"
 
-# ---- 从中转服务器删除公钥 ----
-echo "[*] 从中转服务器删除公钥 (匹配 permitopen 端口 ${PORT}) ..."
+# ---- 从跳板服务器删除公钥 ----
+echo "[*] 从跳板服务器删除公钥 (匹配 permitopen 端口 ${PORT}) ..."
 SSH_CMD="ssh -i ${MGMT_KEY} \
     -o Port=${RELAY_PORT} \
     -o StrictHostKeyChecking=yes \
@@ -48,7 +48,7 @@ SSH_CMD="ssh -i ${MGMT_KEY} \
 
 # 匹配包含 permitopen="localhost:PORT" 的行并删除
 if ${SSH_CMD} "sed -i '/permitopen=\"localhost:${PORT}\"/d' /home/tunnel/.ssh/authorized_keys" 2>/dev/null; then
-    echo "    ✓ 已从中转服务器删除"
+    echo "    ✓ 已从跳板服务器删除"
 else
     echo "    [!] 删除失败或无匹配条目 — 管理密钥可能未配置"
 fi

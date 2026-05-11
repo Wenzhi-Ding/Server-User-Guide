@@ -378,13 +378,7 @@ Host my-server
 
 ## 脚本源码
 
-以下脚本取自实际部署。服务名称、跳板服务器地址等请根据实际环境修改。
-
-??? note "tunnel.conf — 配置文件"
-
-    ```bash
-    --8<-- "docs/08-linux/_tunnel_scripts/tunnel.conf"
-    ```
+以下脚本取自实际部署，已脱敏。请根据实际环境修改服务名称、跳板服务器地址等。
 
 ??? note "setup.sh — 首次安装"
 
@@ -408,22 +402,4 @@ Host my-server
 
     ```bash
     --8<-- "docs/08-linux/_tunnel_scripts/push-key.sh"
-    ```
-
-??? note "health-check.sh — 健康检查（cron 调用）"
-
-    ```bash
-    --8<-- "docs/08-linux/_tunnel_scripts/health-check.sh"
-    ```
-
-??? note "polyu-tunnel@.service — systemd 模板"
-
-    ```bash
-    --8<-- "docs/08-linux/_tunnel_scripts/polyu-tunnel@.service"
-    ```
-
-??? note "client_ssh_config — 客户端 SSH 配置模板"
-
-    ```bash
-    --8<-- "docs/08-linux/_tunnel_scripts/client_ssh_config"
     ```

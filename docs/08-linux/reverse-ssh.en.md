@@ -378,13 +378,7 @@ For direct-connect mode, set `BIND_PREFIX=0.0.0.0:` in `tunnel.conf` and have us
 
 ## Script Source Code
 
-The following scripts are from a real deployment. Adapt service names, relay server addresses, etc. to your environment.
-
-??? note "tunnel.conf — Configuration file"
-
-    ```bash
-    --8<-- "docs/08-linux/_tunnel_scripts/tunnel.conf"
-    ```
+The following scripts are from a real deployment (sanitized). Adapt service names, relay server addresses, etc. to your environment.
 
 ??? note "setup.sh — Initial setup"
 
@@ -408,22 +402,4 @@ The following scripts are from a real deployment. Adapt service names, relay ser
 
     ```bash
     --8<-- "docs/08-linux/_tunnel_scripts/push-key.sh"
-    ```
-
-??? note "health-check.sh — Health check (cron)"
-
-    ```bash
-    --8<-- "docs/08-linux/_tunnel_scripts/health-check.sh"
-    ```
-
-??? note "polyu-tunnel@.service — systemd template"
-
-    ```bash
-    --8<-- "docs/08-linux/_tunnel_scripts/polyu-tunnel@.service"
-    ```
-
-??? note "client_ssh_config — Client SSH config template"
-
-    ```bash
-    --8<-- "docs/08-linux/_tunnel_scripts/client_ssh_config"
     ```

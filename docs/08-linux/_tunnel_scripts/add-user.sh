@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 # ============================================================
-# 新增隧道用户 + 推送公钥到中转服务器
+# 新增隧道用户 + 推送公钥到跳板服务器
 # 用法: sudo ./add-user.sh <用户名> --key-file <公钥文件> | --key <公钥字符串> [--port 端口] [--remark 备注]
-# 示例: sudo ./add-user.sh charlie --key-file /tmp/charlie.pub --port 2225 --remark "访问学者"
-#       sudo ./add-user.sh charlie --key "ssh-ed25519 AAAA... charlie@laptop" --port 2225
 # ============================================================
 set -euo pipefail
 
@@ -81,7 +79,6 @@ fi
 
 # 校验公钥
 if [ -n "${PUBKEY_INLINE}" ]; then
-    # 直接传入的公钥字符串
     PUBKEY_CONTENT=$(echo "${PUBKEY_INLINE}" | grep -v '^#' | grep -v '^$' | head -1)
     if ! echo "${PUBKEY_CONTENT}" | grep -qE '^(ssh-(ed25519|rsa|ecdsa)|ecdsa-sha2)'; then
         echo "[!] 公钥字符串格式不正确"
@@ -92,7 +89,6 @@ elif [ -n "${PUBKEY_FILE}" ]; then
         echo "[!] 公钥文件不存在: ${PUBKEY_FILE}"
         exit 1
     fi
-    # 读取并校验公钥格式
     PUBKEY_CONTENT=$(grep -v '^#' "${PUBKEY_FILE}" | grep -v '^$' | head -1)
     if ! echo "${PUBKEY_CONTENT}" | grep -qE '^(ssh-(ed25519|rsa|ecdsa)|ecdsa-sha2)'; then
         echo "[!] 文件内容不像 SSH 公钥: ${PUBKEY_FILE}"
@@ -100,14 +96,14 @@ elif [ -n "${PUBKEY_FILE}" ]; then
     fi
 else
     PUBKEY_CONTENT=""
-    echo "[!] 未提供 --key-file，将只创建 PolyU 用户和隧道，不推送公钥到中转服务器"
-    echo "    后续可用: sudo ./push-key.sh ${USERNAME} <公钥文件>"
+    echo "[*] 未提供公钥，将只创建用户和隧道，不推送公钥到跳板服务器"
+    echo "    后续可用: sudo ./push-key.sh ${USERNAME} --key-file <公钥文件>"
 fi
 
 # 自动分配端口
 if [ -z "${PORT}" ]; then
     MAX_PORT=$(awk '/^[0-9]/{print $1}' "${REGISTRY}" | sort -n | tail -1)
-    MAX_PORT=${MAX_PORT:-2220}
+    MAX_PORT=${MAX_PORT:-10000}
     PORT=$((MAX_PORT + 1))
     echo "[*] 自动分配端口: ${PORT}"
 fi
@@ -136,7 +132,6 @@ if ! id "${USERNAME}" &>/dev/null; then
     echo "    ✓ 用户已创建"
 else
     echo "[*] 用户 ${USERNAME} 已存在，跳过创建"
-    # 确保 .ssh 目录和 authorized_keys 存在
     USER_HOME=$(eval echo "~${USERNAME}")
     mkdir -p "${USER_HOME}/.ssh"
     touch "${USER_HOME}/.ssh/authorized_keys"
@@ -145,10 +140,9 @@ else
     chown -R "${USERNAME}:${USERNAME}" "${USER_HOME}/.ssh"
 fi
 
-# ---- 写入公钥到 PolyU 用户 ----
+# ---- 写入公钥到工作服务器 ----
 if [ -n "${PUBKEY_CONTENT}" ]; then
     USER_HOME=$(eval echo "~${USERNAME}")
-    # 去重：已存在则跳过
     if grep -qF "${PUBKEY_CONTENT}" "${USER_HOME}/.ssh/authorized_keys" 2>/dev/null; then
         echo "[*] 公钥已存在于 ${USERNAME} 的 authorized_keys"
     else
@@ -158,9 +152,9 @@ if [ -n "${PUBKEY_CONTENT}" ]; then
     fi
 fi
 
-# ---- 推送公钥到中转服务器 ----
+# ---- 推送公钥到跳板服务器 ----
 if [ -n "${PUBKEY_CONTENT}" ]; then
-    echo "[*] 推送公钥到中转服务器 ..."
+    echo "[*] 推送公钥到跳板服务器 ..."
     RELAY_AK_ENTRY="restrict,port-forwarding,permitopen=\"localhost:${PORT}\" ${PUBKEY_CONTENT}"
 
     SSH_CMD="ssh -i ${MGMT_KEY} \
@@ -172,11 +166,11 @@ if [ -n "${PUBKEY_CONTENT}" ]; then
         ${RELAY_MGMT_USER}@${RELAY_HOST}"
 
     if ${SSH_CMD} "grep -qF '${PUBKEY_CONTENT}' /home/tunnel/.ssh/authorized_keys 2>/dev/null"; then
-        echo "    ✓ 公钥已存在于中转服务器"
+        echo "    ✓ 公钥已存在于跳板服务器"
     else
         ${SSH_CMD} "echo '${RELAY_AK_ENTRY}' >> /home/tunnel/.ssh/authorized_keys" && \
-            echo "    ✓ 公钥已推送到中转服务器 tunnel authorized_keys" || \
-            echo "    [!] 推送失败 — 管理密钥可能未添加到中转服务器 root 的 authorized_keys"
+            echo "    ✓ 公钥已推送到跳板服务器 tunnel authorized_keys" || \
+            echo "    [!] 推送失败 — 管理密钥可能未添加到跳板服务器 root 的 authorized_keys"
     fi
 fi
 
@@ -186,16 +180,16 @@ printf "%s\t%s\t%s\t%s\n" "${PORT}" "${USERNAME}" "${TODAY}" "${REMARK}" >> "${R
 echo "[✓] 端口分配表已更新"
 
 # ---- 启动隧道实例 ----
-echo "[*] 启动 polyu-tunnel@${PORT} ..."
-systemctl enable "polyu-tunnel@${PORT}" 2>/dev/null
-systemctl start "polyu-tunnel@${PORT}"
+echo "[*] 启动 tunnel@${PORT} ..."
+systemctl enable "tunnel@${PORT}" 2>/dev/null
+systemctl start "tunnel@${PORT}"
 sleep 2
 
-if systemctl is-active --quiet "polyu-tunnel@${PORT}"; then
+if systemctl is-active --quiet "tunnel@${PORT}"; then
     echo "[✓] 隧道已启动"
 else
     echo "[✗] 隧道启动失败:"
-    journalctl -u "polyu-tunnel@${PORT}" --no-pager -n 10
+    journalctl -u "tunnel@${PORT}" --no-pager -n 10
     exit 1
 fi
 
@@ -205,9 +199,9 @@ echo "===== 用户 ${USERNAME} 已添加 (端口 ${PORT}) ====="
 echo ""
 echo "将以下配置发给 ${USERNAME}，添加到 ~/.ssh/config:"
 echo ""
-echo "  Host polyu"
+echo "  Host my-server"
 echo "      HostName localhost"
 echo "      Port ${PORT}"
-echo "      ProxyJump tunnel@8.218.122.123"
+echo "      ProxyJump tunnel@${RELAY_HOST}"
 echo "      User ${USERNAME}"
 echo "      ServerAliveInterval 30"
