@@ -1,2 +1,4 @@
 site
 uv.lock
+.cache
+.venv
