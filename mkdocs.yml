@@ -80,6 +80,7 @@ plugins:
                     - macOS: 01-connect/mac.md
                     - Android: 01-connect/android.md
                     - iOS: 01-connect/ios.md
+                    - Connect via Jump Server: 01-connect/jump-server.md
                   - Python:
                     - Setup - Installation: 02-uv/install.md
                     - Setup - Usage: 02-uv/use.md
@@ -106,7 +107,7 @@ plugins:
                     - Checking Memory Cache Usage: 08-linux/smem.md
                     - System Management: 08-linux/system-manage.md
                     - Firewall and Access Restrictions: 08-linux/firewall.md
-                    - Jump Proxy: 08-linux/jump-proxy.md
+                    - Jump Server (Reverse SSH): 08-linux/reverse-ssh.md
                     - Data and Permissions: data.md
                   - Stata:
                     - Using Stata in Jupyter Lab: 04-stata/jupyter.md
@@ -169,6 +170,7 @@ markdown_extensions:
       user: squidfunk
       repo: mkdocs-material
   - pymdownx.mark
+  - pymdownx.snippets
   - pymdownx.smartsymbols
   - pymdownx.superfences:
       custom_fences:
@@ -188,6 +190,7 @@ nav:
     - macOS: 01-connect/mac.md
     - Android: 01-connect/android.md
     - iOS: 01-connect/ios.md
+    - 使用跳板连接: 01-connect/jump-server.md
   - Python:
     - 配置 - 安装: 02-uv/install.md
     - 配置 - 使用: 02-uv/use.md
@@ -214,7 +217,7 @@ nav:
     - 检查内存缓存占用: 08-linux/smem.md
     - 系统管理: 08-linux/system-manage.md
     - 防火墙与访问限制: 08-linux/firewall.md
-    - 跳板代理: 08-linux/jump-proxy.md
+    - 跳板服务器: 08-linux/reverse-ssh.md
     - 数据及权限: data.md
   - Stata:
     - Jupyter Lab: 04-stata/jupyter.md

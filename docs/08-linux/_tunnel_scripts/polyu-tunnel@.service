@@ -1,0 +1,39 @@
+[Unit]
+Description=PolyU Reverse SSH Tunnel - port %i
+After=network-online.target ssh.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tunnel-runner
+EnvironmentFile=/etc/autossh/tunnel.conf
+ExecStart=/usr/bin/autossh -M 0 -N \
+  -R %i:localhost:22 \
+  -o "ServerAliveInterval=30" \
+  -o "ServerAliveCountMax=3" \
+  -o "Port=${RELAY_PORT}" \
+  -o "StrictHostKeyChecking=yes" \
+  -o "UserKnownHostsFile=/etc/autossh/known_hosts" \
+  -o "ExitOnForwardFailure=yes" \
+  -o "IdentitiesOnly=yes" \
+  -o "ConnectTimeout=15" \
+  -i /etc/autossh/tunnel_key \
+  ${RELAY_USER}@${RELAY_HOST}
+Restart=always
+RestartSec=10
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+# 安全加固
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/etc/autossh
+RuntimeDirectory=polyu-tunnel-%i
+
+# 日志
+SyslogIdentifier=polyu-tunnel@%i
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

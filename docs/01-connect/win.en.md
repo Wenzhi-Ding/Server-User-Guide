@@ -12,7 +12,7 @@ However, since Xshell and Xftp are paid software with limited features in the fr
 
 	Please do not query while using a proxy or VPN. Otherwise, you may not be able to find the IP address, or it may return the IP address of a public data center.
 
-	Some teams can use a [jump server](../08-linux/jump-proxy.md) to bypass the restrictions. Please consult the IT administrator of your team for details.
+	Some teams can use a [jump server](../08-linux/reverse-ssh.en.md) to bypass the restrictions. Please consult the IT administrator of your team for details.
 
 !!! tip "PolyU Users"
 

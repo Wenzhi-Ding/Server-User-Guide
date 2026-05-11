@@ -1,0 +1,26 @@
+# ~/.ssh/config — 内地笔记本配置
+# ========================================
+# 添加到笔记本的 ~/.ssh/config，然后 ssh polyu 即可
+
+# ── ProxyJump 模式（推荐，隧道端口不暴露公网）──
+Host polyu
+    HostName localhost
+    Port 2221
+    ProxyJump tunnel@8.218.122.123
+    User wenzhi
+    ServerAliveInterval 30
+
+# ── 直连模式（需中转服务器开启 GatewayPorts=clientspecified）──
+# Host polyu
+#     HostName 8.218.122.123
+#     Port 2221
+#     User wenzhi
+#     ServerAliveInterval 30
+
+# ── 其他用户 ──
+# Host polyu-charlie
+#     HostName localhost
+#     Port 2225
+#     ProxyJump tunnel@8.218.122.123
+#     User charlie
+#     ServerAliveInterval 30
